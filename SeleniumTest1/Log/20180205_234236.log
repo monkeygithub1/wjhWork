@@ -1,0 +1,18 @@
+2018-02-05 23:42:36 700 INFO:Start to select browser name from properties file
+2018-02-05 23:42:36 701 INFO:You had select test browser type is:Chrome
+2018-02-05 23:42:36 701 INFO:The test server URL is:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-05 23:42:39 122 INFO:Lauching Chrome...
+2018-02-05 23:42:39 565 INFO:Open URL:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-05 23:42:40 683 INFO:Maximize browser...
+2018-02-05 23:42:40 687 INFO:Wait for 5seconds.
+2018-02-05 23:42:41 780 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> id: phoneUn].
+2018-02-05 23:42:41 844 INFO:Type value is: 13910623294.
+2018-02-05 23:42:41 909 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> id: password].
+2018-02-05 23:42:41 949 INFO:Type value is: qw.
+2018-02-05 23:42:42 037 INFO:Element:[[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> id: loginBtn]was clicked.
+2018-02-05 23:42:43 522 INFO:Element:[[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-02-05 23:42:44 614 INFO:Element:[[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"甲方合同")]]was clicked.
+2018-02-05 23:42:50 855 INFO:Element:[[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[3]/td[8]/div/a]was clicked.
+2018-02-05 23:42:52 935 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> id: name_].
+2018-02-05 23:42:53 101 INFO:Type value is: 自动化甲方合同-书面-创新业务部-每个节点拒绝重发（不修改）1.
+2018-02-05 23:42:53 238 INFO:Element:[[ChromeDriver: chrome on XP (86620287bc91033d1a96e8cc23de6484)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.

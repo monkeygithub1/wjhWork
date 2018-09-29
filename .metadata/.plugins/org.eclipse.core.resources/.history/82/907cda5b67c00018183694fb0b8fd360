@@ -1,0 +1,4 @@
+#HOST = https://reqres.in
+HOST = https://pmistest.womow.cn
+url = /pmis/safe/loginAjax
+a = {HOST}{url}

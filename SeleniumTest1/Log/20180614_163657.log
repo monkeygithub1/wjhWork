@@ -1,0 +1,47 @@
+2018-06-14 16:36:57 195 INFO:Start to select browser name from properties file
+2018-06-14 16:36:57 196 INFO:You had select test browser type is:Chrome
+2018-06-14 16:36:57 197 INFO:The test server URL is:http://192.168.2.253:9080/pmis
+2018-06-14 16:36:59 670 INFO:Lauching Chrome...
+2018-06-14 16:37:00 428 INFO:Open URL:http://192.168.2.253:9080/pmis
+2018-06-14 16:37:01 552 INFO:Maximize browser...
+2018-06-14 16:37:01 556 INFO:Wait for 5seconds.
+2018-06-14 16:37:02 643 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: phoneUn].
+2018-06-14 16:37:02 707 INFO:Type value is: 18795039941.
+2018-06-14 16:37:02 769 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: password].
+2018-06-14 16:37:02 816 INFO:Type value is: qetqet.
+2018-06-14 16:37:02 903 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: loginBtn]was clicked.
+2018-06-14 16:37:04 766 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-06-14 16:37:05 860 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"项目立项管理")]]was clicked.
+2018-06-14 16:37:12 088 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//button[@onclick="toAdd()"]]was clicked.
+2018-06-14 16:37:12 303 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: proj_name_].
+2018-06-14 16:37:12 480 INFO:Type value is: 安全质量部如何打爆常庆顺的狗头20180614163701.
+2018-06-14 16:37:12 654 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> link text: 选择]was clicked.
+2018-06-14 16:37:12 722 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: scuQueryParam].
+2018-06-14 16:37:12 766 INFO:Type value is: 崔永欢.
+2018-06-14 16:37:12 895 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> css selector: input[type="button"]]was clicked.
+2018-06-14 16:37:13 072 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> name: scuResults]was clicked.
+2018-06-14 16:37:13 199 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> link text: 确定选择]was clicked.
+2018-06-14 16:37:13 341 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-06-14 16:37:13 453 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//dd[text()='安全质量部']]was clicked.
+2018-06-14 16:37:13 521 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: cy_dept_].
+2018-06-14 16:37:13 601 INFO:Type value is: 参与部门-非必填！.
+2018-06-14 16:37:13 735 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> css selector: tr.row0 > td.td_left > div.layui-form-select > div.layui-select-title > input.layui-input]was clicked.
+2018-06-14 16:37:13 851 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//dd[text()='华北区域']]was clicked.
+2018-06-14 16:37:13 915 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: kehu].
+2018-06-14 16:37:14 037 INFO:Type value is: 客户1-2-3-13910623294.
+2018-06-14 16:37:14 163 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: (//input[@value=''])[3]]was clicked.
+2018-06-14 16:37:14 266 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//dd[text()='牵头']]was clicked.
+2018-06-14 16:37:14 396 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: (//input[@value=''])[4]]was clicked.
+2018-06-14 16:37:14 498 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//dd[text()='R（研究）']]was clicked.
+2018-06-14 16:37:14 636 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: (//a[contains(text(),'选择')])[2]]was clicked.
+2018-06-14 16:37:16 766 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> xpath: .//input[@value="企业级业务咨询-管理咨询-管理标准化咨询-无-无"]]was clicked.
+2018-06-14 16:37:16 900 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> link text: 确定选择]was clicked.
+2018-06-14 16:37:16 972 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: yuji_contract_sum_].
+2018-06-14 16:37:17 030 INFO:Type value is: 10000.
+2018-06-14 16:37:17 096 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: descript_].
+2018-06-14 16:37:17 153 INFO:Type value is: 项目概述非必填.
+2018-06-14 16:37:17 281 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: lxBaseSaveBtn]was clicked.
+2018-06-14 16:37:19 389 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: yusuanH2]was clicked.
+2018-06-14 16:37:24 502 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> name: ys_kphte].
+2018-06-14 16:37:24 557 INFO:Type value is: 5000.
+2018-06-14 16:37:24 742 INFO:Element:[[ChromeDriver: chrome on XP (6f69dc8f6537ac196ff2de3c73cb6898)] -> id: budgetSaveBtn]was clicked.

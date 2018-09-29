@@ -1,0 +1,18 @@
+2018-06-14 16:53:01 107 INFO:Start to select browser name from properties file
+2018-06-14 16:53:01 108 INFO:You had select test browser type is:Chrome
+2018-06-14 16:53:01 108 INFO:The test server URL is:http://192.168.2.253:9080/pmis
+2018-06-14 16:53:03 554 INFO:Lauching Chrome...
+2018-06-14 16:53:04 253 INFO:Open URL:http://192.168.2.253:9080/pmis
+2018-06-14 16:53:05 377 INFO:Maximize browser...
+2018-06-14 16:53:05 382 INFO:Wait for 5seconds.
+2018-06-14 16:53:11 444 ERROR:no such element: Unable to locate element: {"method":"xpath","selector":".//*[@id='win10-shortcuts']/div[contains(@onclick,"甲方合同")]"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '10.120.20.43', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir21752_20664}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.186, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 7791ed432a5dd7c9acde5eeb54504051
+*** Element info: {Using=xpath, value=.//*[@id='win10-shortcuts']/div[contains(@onclick,"甲方合同")]}.

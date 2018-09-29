@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="Tools/selenium-server-standalone-3.4.0.jar" sourcepath="E:/eclipse/WjhWorkspace/Selenium-Java-src.zip"/>
+	<classpathentry kind="lib" path="E:/eclipse/WjhWorkspace/SeleniumTest1/Tools/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/WjhWorkspace/SeleniumTest1/Tools/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/WjhWorkspace/SeleniumTest1/Tools/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/WjhWorkspace/SeleniumTest1/Tools/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="E:/eclipse/WjhWorkspace/SeleniumTest1/Tools/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

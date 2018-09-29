@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;pageObjects.PMIS_FeiYongBaoXiao.java&apos; to &apos;PMIS_FeiYongBaoXiao_Page.java&apos;&#x0D;&#x0A;- Original project: &apos;SeleniumTest1&apos;&#x0D;&#x0A;- Original element: &apos;pageObjects.PMIS_FeiYongBaoXiao.java&apos;&#x0D;&#x0A;- Renamed element: &apos;pageObjects.PMIS_FeiYongBaoXiao_Page.java&apos;" description="Rename compilation unit &apos;PMIS_FeiYongBaoXiao.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;pageObjects{PMIS_FeiYongBaoXiao.java" name="PMIS_FeiYongBaoXiao_Page.java" references="false" stamp="1523437858984" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+HOST = https://pmistest.womow.cn
+#HOST = http://192.168.3.79:8080
+login = /pmis/views/login.jsp
+api_login = /pmis/safe/loginAjax
+######proj#####
+api_proj_save = /pmis/proj/projBaseInfoSaveDo
+api_proj_budge = /pmis/proj/budgetSaveDo
+api_proj_splist = /pmis/proj/lx/queryWaitMeSpLxList
+api_proj_upload = /pmis/app/ms/file/projFileUpload
+api_proj_apply = /pmis/proj/lx/applyDo
+api_proj_sp = /pmis/proj/lx/spDo

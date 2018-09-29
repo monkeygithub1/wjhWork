@@ -1,0 +1,8 @@
+2018-02-01 14:45:16.860 INFO: Start to select browser name from properties file
+2018-02-01 14:45:16.861 INFO: Your had select test browser type is: Chrome
+2018-02-01 14:45:16.861 INFO: The test server URL is: http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-01 14:45:19.304 INFO: Launching Chrome ...
+2018-02-01 14:45:22.382 INFO: Open URL: http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-01 14:45:23.507 INFO: Maximize browser...
+2018-02-01 14:45:23.511 INFO: Wait for 5 seconds.
+2018-02-01 14:45:54.252 INFO: Element: [[ChromeDriver: chrome on XP (15859377550681168e5dc5507d8d8b72)] -> xpath: (//input[@name='bizType'])[51]] was clicked.

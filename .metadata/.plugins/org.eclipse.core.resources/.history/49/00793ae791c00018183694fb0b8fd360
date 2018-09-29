@@ -1,0 +1,52 @@
+package com.qa.data;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RequestPara {
+	//登录
+	public Map<String, String> login_para (String phone_, String password_, String imageVliadCode){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("phone_", phone_);
+		para.put("password_", password_);
+		para.put("imageVliadCode", imageVliadCode);
+		return para;
+	}
+	//项目立项（基本信息保存）
+	public Map<String, String> proj_save_Para(String proj_name_, String proj_mgr_, String proj_mgr_id_, String dept_, String proj_mgr_type_){
+		Map<String, String> para = new Map<String, String>();
+		para.put("id_", "");
+		para.put("ch_proj_id_", "");
+		para.put("proj_name_", proj_name_+Long.toString(System.currentTimeMillis()));
+		para.put("proj_mgr_", proj_mgr_);
+		para.put("proj_mgr_id_", proj_mgr_id_);
+		para.put("dept_", dept_);
+		para.put("cy_dept_", "产品研发的ZZ们");
+		para.put("area_", "华东区域");
+		para.put("customer_", "首钢-烧砖-武先森-13900000000");
+		para.put("proj_xingzhi_", "1");//牵头、参与
+		para.put("proj_mgr_type_", proj_mgr_type_);//R、T等
+		para.put("biz_type1_", "企业级业务咨询");//五级大表
+		para.put("biz_type2_", "管理咨询");
+		para.put("biz_type3_", "管理标准化咨询");
+		para.put("biz_type_ext1_", "无");
+		para.put("biz_type_ext2_", "无");
+		para.put("plan_st_", "2018-09-01");
+		para.put("plan_et_", "2019-09-01");
+		para.put("is_zl_", "1");//标签
+		para.put("yuji_contract_sum_", "5000");//预计合同额
+		para.put("basis_", "合同");//立项依据
+		para.put("descript_", "你们都是大猪蹄子");
+		return para;
+	}
+	//项目立项审批
+	public Map<String, String> proj_sp_para (String projId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("projId", projId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
+
+}

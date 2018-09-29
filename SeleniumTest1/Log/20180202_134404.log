@@ -1,0 +1,14 @@
+2018-02-02 13:44:04 691 INFO:Start to select browser name from properties file
+2018-02-02 13:44:04 692 INFO:You had select test browser type is:Chrome
+2018-02-02 13:44:04 692 INFO:The test server URL is:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-02 13:44:07 120 INFO:Lauching Chrome...
+2018-02-02 13:44:07 706 INFO:Open URL:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-02 13:44:08 824 INFO:Maximize browser...
+2018-02-02 13:44:08 827 INFO:Wait for 5seconds.
+2018-02-02 13:44:09 936 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (06309a71e3ae5ea243ac1ea98723191e)] -> id: phoneUn].
+2018-02-02 13:44:09 996 INFO:Type value is: 18795039941.
+2018-02-02 13:44:10 059 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (06309a71e3ae5ea243ac1ea98723191e)] -> id: password].
+2018-02-02 13:44:10 098 INFO:Type value is: qw.
+2018-02-02 13:44:10 183 INFO:Element:[[ChromeDriver: chrome on XP (06309a71e3ae5ea243ac1ea98723191e)] -> id: loginBtn]was clicked.
+2018-02-02 13:44:29 413 INFO:Element:[[ChromeDriver: chrome on XP (06309a71e3ae5ea243ac1ea98723191e)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-02-02 13:44:54 950 INFO:Element:[[ChromeDriver: chrome on XP (06309a71e3ae5ea243ac1ea98723191e)] -> xpath: (//input[@name='bizType'])[51]]was clicked.

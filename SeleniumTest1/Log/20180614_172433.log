@@ -1,0 +1,12 @@
+2018-06-14 17:24:33 309 INFO:Start to select browser name from properties file
+2018-06-14 17:24:33 310 INFO:You had select test browser type is:Chrome
+2018-06-14 17:24:33 310 INFO:The test server URL is:http://192.168.2.253:9080/pmis
+2018-06-14 17:24:35 764 INFO:Lauching Chrome...
+2018-06-14 17:24:36 589 INFO:Open URL:http://192.168.2.253:9080/pmis
+2018-06-14 17:24:37 713 INFO:Maximize browser...
+2018-06-14 17:24:37 717 INFO:Wait for 5seconds.
+2018-06-14 17:24:38 808 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (0eb3c745fa021eb64f0cf8af2e1afd39)] -> id: phoneUn].
+2018-06-14 17:24:38 868 INFO:Type value is: 13910623294.
+2018-06-14 17:24:38 930 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (0eb3c745fa021eb64f0cf8af2e1afd39)] -> id: password].
+2018-06-14 17:24:38 977 INFO:Type value is: qetqet.
+2018-06-14 17:24:39 066 INFO:Element:[[ChromeDriver: chrome on XP (0eb3c745fa021eb64f0cf8af2e1afd39)] -> id: loginBtn]was clicked.

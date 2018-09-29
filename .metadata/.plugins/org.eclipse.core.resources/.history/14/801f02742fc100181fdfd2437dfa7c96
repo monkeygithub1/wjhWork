@@ -1,0 +1,100 @@
+package com.qa.tests;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.CharsetUtils;
+import org.apache.http.util.EntityUtils;
+
+import com.qa.data.Request;
+import com.qa.restclient.RestClient;
+
+
+public class TEST {
+
+	public static void main(String[] args) throws IOException {
+		RestClient restClient = new RestClient();
+		TEST test = new TEST();
+		Request request = new Request();
+		Map<String, Object> para = new HashMap<String, Object>();
+		para.put("projId", "9f47b521ba474ca6950c83e0e8e72bd8");
+		String url = "https://pmistest.womow.cn/pmis/app/ms/file/projFileUpload";
+		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
+		
+		request.login(headermap, "13910623294");
+		//headermap.put("Content-Type", "application/json;charset=UTF-8");
+		File file = new File("E:\\tongfang.txt");
+		HashMap<String, File> files = new HashMap<String, File>();
+		files.put("file", file);
+		System.out.println(para);
+		String closeableHttpResponse = test.post(url, para, files, headermap);
+		System.out.println(closeableHttpResponse);
+	}
+	public String  post(String url, Map<String, Object> fields, HashMap<String, File> files, Map<String, String> headermap) throws ClientProtocolException, IOException{
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		CloseableHttpResponse response = null;
+		String result = null;
+		
+		MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
+		for (String name : files.keySet()) {
+			File file = files.get(name);
+			FileBody fileBody = new FileBody(file);
+			entityBuilder.addPart(name, fileBody);
+		}
+		for (String name : fields.keySet()) {
+			String value = fields.get(name).toString();
+			StringBody StringBody = new StringBody(value, ContentType.TEXT_PLAIN);
+			entityBuilder.addPart(name, StringBody);
+		}
+		HttpPost httpPost = new HttpPost(url);
+		for(Map.Entry<String, String> entry : headermap.entrySet()){
+			httpPost.addHeader(entry.getKey(), entry.getValue());
+		}
+		httpPost.setEntity(entityBuilder.build());
+		response = httpClient.execute(httpPost);
+		HttpEntity resEntity = response.getEntity();
+		result = EntityUtils.toString(resEntity);
+
+		return result;
+	}
+
+//	public CloseableHttpResponse post(String url, Map<String, String> entity, Map<String, String> headermap) throws ClientProtocolException, IOException  {
+//		CloseableHttpClient httpclient = HttpClients.createDefault();
+//		
+//		HttpPost httppost = new HttpPost(url);
+//		List<NameValuePair> param=new ArrayList<NameValuePair>(entity.size());
+//		for(Map.Entry<String, String>one:entity.entrySet()){
+//			param.add(new BasicNameValuePair(one.getKey(), one.getValue()));
+//		}
+//		httppost.setEntity(new UrlEncodedFormEntity(param,CharsetUtils.get("UTF-8")));
+//		for(Map.Entry<String, String> entry : headermap.entrySet()){
+//			httppost.addHeader(entry.getKey(), entry.getValue());
+//		}
+//		String filepath = "E:\\tongfang.txt";
+//		FileBody bin = new FileBody(new File(filepath));
+//		MultipartEntityBuilder reqEntyty = MultipartEntityBuilder.create();
+//		reqEntyty.addPart("file", bin);
+//		HttpEntity httpEntity = reqEntyty.build();
+//		httppost.setEntity(httpEntity);		
+//		CloseableHttpResponse httpResponse = httpclient.execute(httppost);
+//		return httpResponse;
+//	}
+}

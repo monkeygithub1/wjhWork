@@ -1,0 +1,64 @@
+package com.qa.data;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
+import org.testng.Assert;
+
+import com.qa.base.TestBase;
+import com.qa.restclient.RestClient;
+
+public class Request {
+	//登录（密码和验证码写死了）
+	public void login(Map<String, String> headermap, String phone_) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		//生成参数集合、生成请求串  
+		Map<String, String> para = new RequestPara().login_para(phone_, "65bec0bd5cd4e10818ef9370cf33fa3c", "1");
+		String url = restClient.url("api_login");
+		//发起请求并获取响应  （登录）
+		CloseableHttpResponse closeableHttpResponse = restClient.post(url, para, headermap);
+		//断言：响应码  
+		int statusCode = closeableHttpResponse.getStatusLine().getStatusCode();
+		Assert.assertEquals(statusCode, new TestBase().RESPONSE_STATUS_CODE_200, "status code is not 200!!");
+		//断言：响应文本  
+		String responseString = EntityUtils.toString(closeableHttpResponse.getEntity());//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "request is not ok");		
+	}
+	//获取列表（各种列表）
+	public String queryList(String url, Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		//获取待审列表接口  
+		//生成参数集合、生成请求串
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("page", "1");
+		para.put("limit", "10");
+		//发起请求并获取响应（获取待审列表） 
+		CloseableHttpResponse closeableHttpResponse = restClient.post(url, para, headermap);
+		String responseString = EntityUtils.toString(closeableHttpResponse.getEntity());
+		return responseString;
+	}
+	//项目立项保存（返回projId）
+	public String projSave (Map<String, String> headermap, String proj_name_, String proj_mgr_, String proj_mgr_id_, String dept_, String proj_mgr_type_) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().proj_save_Para(proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
+		String url = restClient.url("api_proj_save");
+		CloseableHttpResponse closeableHttpResponse = restClient.post(url, para, headermap);
+		String responseString = EntityUtils.toString(closeableHttpResponse.getEntity());//返回结果为projId
+		return responseString;
+	}
+	//项目立项审批
+	public void projSp (Map<String, String> headermap, String projId, String taskId, String sp, String comment) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().proj_sp_para(projId, taskId, sp, comment);
+		String url = restClient.url("api_proj_sp");
+		//发起请求并获取响应（获取待审列表） 
+		CloseableHttpResponse closeableHttpResponse = restClient.post(url, para, headermap);
+		String responseString = EntityUtils.toString(closeableHttpResponse.getEntity());//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "request is not ok");	
+	}
+
+}

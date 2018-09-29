@@ -1,0 +1,52 @@
+package com.qa.data;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RequestPara {
+	//登录
+	public Map<String, String> login_para (String phone_, String password_, String imageVliadCode){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("phone_", phone_);
+		para.put("password_", password_);
+		para.put("imageVliadCode", imageVliadCode);
+		return para;
+	}
+	//项目立项（基本信息保存）
+	public Map<String, String> proj_save_Para(){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("id_", "");
+		para.put("ch_proj_id_", "");
+		para.put("proj_name_", "");
+		para.put("proj_mgr_", "");
+		para.put("proj_mgr_id_", "");
+		para.put("dept_", "");
+		para.put("cy_dept_", "");
+		para.put("area_", "");
+		para.put("customer_", "");
+		para.put("proj_xingzhi_", "");
+		para.put("proj_mgr_type_", "");
+		para.put("biz_type1_", "");
+		para.put("biz_type2_", "");
+		para.put("biz_type3_", "");
+		para.put("biz_type_ext1_", "");
+		para.put("biz_type_ext2_", "");
+		para.put("plan_st_", "");
+		para.put("plan_et_", "");
+		para.put("is_zl_", "");
+		para.put("yuji_contract_sum_", "");
+		para.put("basis_", "");
+		para.put("descript_", "");
+		return para;
+	}
+	//项目立项审批
+	public Map<String, String> proj_sp_para (String projId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("projId", projId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
+
+}

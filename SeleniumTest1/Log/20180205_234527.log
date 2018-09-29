@@ -1,0 +1,25 @@
+2018-02-05 23:45:27 943 INFO:Start to select browser name from properties file
+2018-02-05 23:45:27 944 INFO:You had select test browser type is:Chrome
+2018-02-05 23:45:27 944 INFO:The test server URL is:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-05 23:45:30 370 INFO:Lauching Chrome...
+2018-02-05 23:45:31 043 INFO:Open URL:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-05 23:45:32 161 INFO:Maximize browser...
+2018-02-05 23:45:32 164 INFO:Wait for 5seconds.
+2018-02-05 23:45:33 254 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> id: phoneUn].
+2018-02-05 23:45:33 315 INFO:Type value is: 13910623294.
+2018-02-05 23:45:33 377 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> id: password].
+2018-02-05 23:45:33 415 INFO:Type value is: qw.
+2018-02-05 23:45:33 505 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> id: loginBtn]was clicked.
+2018-02-05 23:45:34 942 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-02-05 23:45:36 036 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"甲方合同")]]was clicked.
+2018-02-05 23:45:42 320 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[3]/td[8]/div/a]was clicked.
+2018-02-05 23:45:44 400 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> id: name_].
+2018-02-05 23:45:44 564 INFO:Type value is: 自动化甲方合同-书面-创新业务部-每个节点拒绝重发（不修改）1.
+2018-02-05 23:45:44 713 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-02-05 23:45:44 846 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: .//dd[text()='创新业务部']]was clicked.
+2018-02-05 23:45:44 975 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[2]/div/div/input]was clicked.
+2018-02-05 23:45:45 077 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: .//dd[text()='书面']]was clicked.
+2018-02-05 23:45:45 208 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[4]/div/div/input]was clicked.
+2018-02-05 23:45:45 311 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: .//dd[text()='物资采购']]was clicked.
+2018-02-05 23:45:45 446 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> id: cpaBaseSaveBtn]was clicked.
+2018-02-05 23:45:45 631 INFO:Element:[[ChromeDriver: chrome on XP (d5e3cd8aa165db812c249d1e97f183e1)] -> xpath: //button[text()='提交申请']]was clicked.

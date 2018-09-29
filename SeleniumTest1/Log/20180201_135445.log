@@ -1,0 +1,4 @@
+2018-02-01 13:54:45.997 INFO: Start to select browser name from properties file
+2018-02-01 13:54:45.998 INFO: Your had select test browser type is: Chrome
+2018-02-01 13:54:45.998 INFO: The test server URL is: http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-01 13:54:48.414 INFO: Launching Chrome ...

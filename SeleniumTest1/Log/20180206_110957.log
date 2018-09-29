@@ -1,0 +1,475 @@
+2018-02-06 11:09:57 667 INFO:Start to select browser name from properties file
+2018-02-06 11:09:57 668 INFO:You had select test browser type is:Chrome
+2018-02-06 11:09:57 668 INFO:The test server URL is:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-06 11:10:00 101 INFO:Lauching Chrome...
+2018-02-06 11:10:00 836 INFO:Open URL:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-06 11:10:01 955 INFO:Maximize browser...
+2018-02-06 11:10:01 959 INFO:Wait for 5seconds.
+2018-02-06 11:10:03 109 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:10:03 169 INFO:Type value is: 13910623294.
+2018-02-06 11:10:03 228 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:10:03 268 INFO:Type value is: qw.
+2018-02-06 11:10:03 353 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:10:04 882 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-02-06 11:10:05 975 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:10:12 249 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//button[@onclick="toAdd()"]]was clicked.
+2018-02-06 11:10:14 328 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: name_].
+2018-02-06 11:10:14 466 INFO:Type value is: 自动化乙方合同-书面-创新业务部.
+2018-02-06 11:10:14 534 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: money_].
+2018-02-06 11:10:14 583 INFO:Type value is: 1000.
+2018-02-06 11:10:14 744 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-02-06 11:10:14 880 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='创新业务部']]was clicked.
+2018-02-06 11:10:14 954 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: qa_time_].
+2018-02-06 11:10:14 999 INFO:Type value is: 1.
+2018-02-06 11:10:15 139 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[2]/div/div/input]was clicked.
+2018-02-06 11:10:15 258 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='书面']]was clicked.
+2018-02-06 11:10:15 389 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[4]/div/div/input]was clicked.
+2018-02-06 11:10:15 508 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='工程建设']]was clicked.
+2018-02-06 11:10:15 572 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: pa_qddw_].
+2018-02-06 11:10:15 612 INFO:Type value is: 国网.
+2018-02-06 11:10:15 738 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[4]/td[4]/div/div/input]was clicked.
+2018-02-06 11:10:15 857 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='天津市万贸科技有限公司']]was clicked.
+2018-02-06 11:10:15 995 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//a[text()="选择"]]was clicked.
+2018-02-06 11:10:16 059 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spuQueryParam].
+2018-02-06 11:10:16 109 INFO:Type value is: 甲方合同专用项目1.
+2018-02-06 11:10:16 233 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//input[@value="搜索"]]was clicked.
+2018-02-06 11:10:16 397 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="findResultDiv"]/input]was clicked.
+2018-02-06 11:10:16 520 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> link text: 确定选择]was clicked.
+2018-02-06 11:10:16 605 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: descript_].
+2018-02-06 11:10:16 658 INFO:Type value is: 备注非必填.
+2018-02-06 11:10:16 807 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: cpbBaseSaveBtn]was clicked.
+2018-02-06 11:10:18 918 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: moneyInPlanH2]was clicked.
+2018-02-06 11:10:24 036 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="contrPlan"]/div[1]/div[1]/div/input].
+2018-02-06 11:10:24 085 INFO:Type value is: 10:0
+.
+2018-02-06 11:10:24 149 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: date0].
+2018-02-06 11:10:24 211 INFO:Type value is: 2018-02-01.
+2018-02-06 11:10:24 357 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="contrPlan"]//button[text()='确定']]was clicked.
+2018-02-06 11:10:26 469 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: invoiceOutH2]was clicked.
+2018-02-06 11:10:31 583 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="contrPlan"]/div[1]/div[1]/div/input].
+2018-02-06 11:10:31 639 INFO:Type value is: 10:0
+.
+2018-02-06 11:10:31 698 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: date0].
+2018-02-06 11:10:31 766 INFO:Type value is: 2018-03-01.
+2018-02-06 11:10:31 928 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="contrPlan"]//button[text()='确定']]was clicked.
+2018-02-06 11:10:34 082 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //button[text()='提交申请']]was clicked.
+2018-02-06 11:10:36 246 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:10:38 338 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:10:38 497 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:10:38 556 INFO:Type value is: 13752506056.
+2018-02-06 11:10:38 617 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:10:38 655 INFO:Type value is: qw.
+2018-02-06 11:10:38 750 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:10:39 018 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:10:41 143 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:10:46 424 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:10:48 494 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:10:48 543 INFO:Type value is: 不OK.
+2018-02-06 11:10:48 674 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp2Btn]was clicked.
+2018-02-06 11:10:52 770 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:10:54 850 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:10:55 005 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:10:55 071 INFO:Type value is: 13910623294.
+2018-02-06 11:10:55 138 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:10:55 186 INFO:Type value is: qw.
+2018-02-06 11:10:55 263 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:10:56 371 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:11:02 631 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/a]was clicked.
+2018-02-06 11:11:04 705 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: name_].
+2018-02-06 11:11:04 812 INFO:Type value is: 自动化乙方合同-书面-创新业务部1.
+2018-02-06 11:11:04 945 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-02-06 11:11:05 066 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='创新业务部']]was clicked.
+2018-02-06 11:11:05 190 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[2]/div/div/input]was clicked.
+2018-02-06 11:11:05 297 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='书面']]was clicked.
+2018-02-06 11:11:05 412 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[4]/div/div/input]was clicked.
+2018-02-06 11:11:05 514 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='工程建设']]was clicked.
+2018-02-06 11:11:05 630 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: cpbBaseSaveBtn]was clicked.
+2018-02-06 11:11:05 782 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //button[text()='提交申请']]was clicked.
+2018-02-06 11:11:07 913 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:11:09 996 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:11:10 197 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:11:10 259 INFO:Type value is: 13752506056.
+2018-02-06 11:11:10 320 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:11:10 364 INFO:Type value is: qw.
+2018-02-06 11:11:10 451 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:11:10 827 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:11:12 953 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:11:18 175 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:11:20 247 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:11:20 293 INFO:Type value is: OK.
+2018-02-06 11:11:20 432 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:11:23 551 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:11:25 629 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:11:25 750 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:11:25 808 INFO:Type value is: 18602634891.
+2018-02-06 11:11:25 868 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:11:25 905 INFO:Type value is: qw.
+2018-02-06 11:11:25 977 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:11:26 195 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:11:28 316 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:11:33 525 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:11:35 596 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:11:35 643 INFO:Type value is: 不OK.
+2018-02-06 11:11:35 761 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp2Btn]was clicked.
+2018-02-06 11:11:39 845 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:11:41 923 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:11:42 068 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:11:42 124 INFO:Type value is: 13910623294.
+2018-02-06 11:11:42 184 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:11:42 223 INFO:Type value is: qw.
+2018-02-06 11:11:42 310 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:11:43 409 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:11:49 658 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/a]was clicked.
+2018-02-06 11:11:51 750 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: name_].
+2018-02-06 11:11:51 901 INFO:Type value is: 自动化乙方合同-书面-创新业务部2.
+2018-02-06 11:11:52 020 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-02-06 11:11:52 123 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='创新业务部']]was clicked.
+2018-02-06 11:11:52 262 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[2]/div/div/input]was clicked.
+2018-02-06 11:11:52 372 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='书面']]was clicked.
+2018-02-06 11:11:52 519 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[4]/div/div/input]was clicked.
+2018-02-06 11:11:52 622 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='工程建设']]was clicked.
+2018-02-06 11:11:52 750 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: cpbBaseSaveBtn]was clicked.
+2018-02-06 11:11:52 908 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //button[text()='提交申请']]was clicked.
+2018-02-06 11:11:55 019 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:11:57 121 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:11:57 268 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:11:57 320 INFO:Type value is: 13752506056.
+2018-02-06 11:11:57 379 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:11:57 414 INFO:Type value is: qw.
+2018-02-06 11:11:57 497 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:11:57 787 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:11:59 910 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:12:05 142 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:12:07 236 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:12:07 278 INFO:Type value is: OK.
+2018-02-06 11:12:07 422 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:12:10 562 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:12:12 640 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:12:12 775 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:12:12 834 INFO:Type value is: 18602634891.
+2018-02-06 11:12:12 897 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:12:12 935 INFO:Type value is: qw.
+2018-02-06 11:12:13 015 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:12:13 272 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:12:15 395 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:12:20 633 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:12:22 732 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:12:22 815 INFO:Type value is: OK.
+2018-02-06 11:12:22 979 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:12:26 107 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:12:28 185 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:12:28 348 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:12:28 407 INFO:Type value is: 13612194369.
+2018-02-06 11:12:28 467 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:12:28 504 INFO:Type value is: qw.
+2018-02-06 11:12:28 584 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:12:28 867 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:12:30 988 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:12:36 214 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:12:38 283 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:12:38 333 INFO:Type value is: 不OK.
+2018-02-06 11:12:38 485 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp2Btn]was clicked.
+2018-02-06 11:12:42 581 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:12:44 660 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:12:44 780 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:12:44 839 INFO:Type value is: 13910623294.
+2018-02-06 11:12:44 907 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:12:44 945 INFO:Type value is: qw.
+2018-02-06 11:12:45 026 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:12:46 133 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:12:52 397 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/a]was clicked.
+2018-02-06 11:12:54 468 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: name_].
+2018-02-06 11:12:54 572 INFO:Type value is: 自动化乙方合同-书面-创新业务部3.
+2018-02-06 11:12:54 690 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-02-06 11:12:54 812 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='创新业务部']]was clicked.
+2018-02-06 11:12:54 934 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[2]/div/div/input]was clicked.
+2018-02-06 11:12:55 042 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='书面']]was clicked.
+2018-02-06 11:12:55 176 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[4]/div/div/input]was clicked.
+2018-02-06 11:12:55 293 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='工程建设']]was clicked.
+2018-02-06 11:12:55 424 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: cpbBaseSaveBtn]was clicked.
+2018-02-06 11:12:55 608 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //button[text()='提交申请']]was clicked.
+2018-02-06 11:12:57 730 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:12:59 808 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:12:59 937 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:12:59 994 INFO:Type value is: 13752506056.
+2018-02-06 11:13:00 054 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:13:00 090 INFO:Type value is: qw.
+2018-02-06 11:13:00 172 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:13:00 414 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:13:02 540 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:13:07 757 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:13:09 851 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:13:09 890 INFO:Type value is: OK.
+2018-02-06 11:13:10 077 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:13:13 212 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:13:15 311 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:13:15 477 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:13:15 532 INFO:Type value is: 18602634891.
+2018-02-06 11:13:15 593 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:13:15 627 INFO:Type value is: qw.
+2018-02-06 11:13:15 707 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:13:15 951 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:13:18 077 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:13:23 303 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:13:25 397 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:13:25 438 INFO:Type value is: OK.
+2018-02-06 11:13:25 559 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:13:28 695 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:13:30 790 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:13:30 934 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:13:30 990 INFO:Type value is: 13612194369.
+2018-02-06 11:13:31 049 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:13:31 085 INFO:Type value is: qw.
+2018-02-06 11:13:31 162 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:13:31 391 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:13:33 510 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:13:38 717 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:13:40 797 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:13:40 839 INFO:Type value is: OK.
+2018-02-06 11:13:40 970 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:13:44 088 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:13:46 186 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:13:46 341 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:13:46 401 INFO:Type value is: 15522219091.
+2018-02-06 11:13:46 461 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:13:46 495 INFO:Type value is: qw.
+2018-02-06 11:13:46 575 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:13:46 831 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:13:48 951 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:13:54 165 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:13:56 253 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:13:56 295 INFO:Type value is: 不OK.
+2018-02-06 11:13:56 436 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp2Btn]was clicked.
+2018-02-06 11:14:00 536 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:14:02 634 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:14:02 807 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:14:02 861 INFO:Type value is: 13910623294.
+2018-02-06 11:14:02 919 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:14:02 957 INFO:Type value is: qw.
+2018-02-06 11:14:03 040 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:14:04 144 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:14:10 399 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/a]was clicked.
+2018-02-06 11:14:12 486 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: name_].
+2018-02-06 11:14:12 599 INFO:Type value is: 自动化乙方合同-书面-创新业务部4.
+2018-02-06 11:14:12 716 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[2]/td[2]/div/div/input]was clicked.
+2018-02-06 11:14:12 829 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='创新业务部']]was clicked.
+2018-02-06 11:14:12 976 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[2]/div/div/input]was clicked.
+2018-02-06 11:14:13 095 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='书面']]was clicked.
+2018-02-06 11:14:13 217 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //*[@id="baseInfoDiv"]/form/div/table/tbody/tr[3]/td[4]/div/div/input]was clicked.
+2018-02-06 11:14:13 328 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//dd[text()='工程建设']]was clicked.
+2018-02-06 11:14:13 457 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: cpbBaseSaveBtn]was clicked.
+2018-02-06 11:14:13 644 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: //button[text()='提交申请']]was clicked.
+2018-02-06 11:14:15 783 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:14:17 860 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:14:17 987 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:14:18 043 INFO:Type value is: 13752506056.
+2018-02-06 11:14:18 097 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:14:18 132 INFO:Type value is: qw.
+2018-02-06 11:14:18 208 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:14:18 458 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:14:20 590 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:14:25 817 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:14:27 908 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:14:27 953 INFO:Type value is: OK.
+2018-02-06 11:14:28 141 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:14:31 247 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:14:33 339 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:14:33 467 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:14:33 524 INFO:Type value is: 18602634891.
+2018-02-06 11:14:33 580 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:14:33 619 INFO:Type value is: qw.
+2018-02-06 11:14:33 694 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:14:33 943 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:14:36 061 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:14:41 275 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:14:43 337 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:14:43 393 INFO:Type value is: OK.
+2018-02-06 11:14:43 513 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:14:46 628 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:14:48 704 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:14:48 846 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:14:48 904 INFO:Type value is: 13612194369.
+2018-02-06 11:14:48 964 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:14:49 001 INFO:Type value is: qw.
+2018-02-06 11:14:49 076 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:14:49 316 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:14:51 430 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:14:56 639 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:14:58 722 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:14:58 771 INFO:Type value is: OK.
+2018-02-06 11:14:58 922 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.
+2018-02-06 11:15:02 022 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: win10_btn_win]was clicked.
+2018-02-06 11:15:04 093 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir3100_31927}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: ce1a2437b2473370af5720c064682939
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 11:15:04 217 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: phoneUn].
+2018-02-06 11:15:04 271 INFO:Type value is: 15522219091.
+2018-02-06 11:15:04 328 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: password].
+2018-02-06 11:15:04 365 INFO:Type value is: qw.
+2018-02-06 11:15:04 440 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: loginBtn]was clicked.
+2018-02-06 11:15:04 698 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"乙方合同")]]was clicked.
+2018-02-06 11:15:06 818 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 11:15:12 034 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr/td[8]/div/a]was clicked.
+2018-02-06 11:15:14 127 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: spCommont].
+2018-02-06 11:15:14 181 INFO:Type value is: OK.
+2018-02-06 11:15:14 353 INFO:Element:[[ChromeDriver: chrome on XP (ce1a2437b2473370af5720c064682939)] -> id: sp1Btn]was clicked.

@@ -1,0 +1,35 @@
+2018-02-06 10:29:38 967 INFO:Start to select browser name from properties file
+2018-02-06 10:29:38 968 INFO:You had select test browser type is:Chrome
+2018-02-06 10:29:38 968 INFO:The test server URL is:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-06 10:29:41 386 INFO:Lauching Chrome...
+2018-02-06 10:29:41 912 INFO:Open URL:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-06 10:29:43 034 INFO:Maximize browser...
+2018-02-06 10:29:43 037 INFO:Wait for 5seconds.
+2018-02-06 10:29:44 126 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: phoneUn].
+2018-02-06 10:29:44 183 INFO:Type value is: 13910623294.
+2018-02-06 10:29:44 246 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: password].
+2018-02-06 10:29:44 285 INFO:Type value is: qw.
+2018-02-06 10:29:44 373 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: loginBtn]was clicked.
+2018-02-06 10:29:46 001 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-02-06 10:29:47 085 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: win10_btn_win]was clicked.
+2018-02-06 10:29:49 181 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir1680_22453}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: e558de6102a0460803dc66549b0f9bf9
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-06 10:29:49 330 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: phoneUn].
+2018-02-06 10:29:49 390 INFO:Type value is: 18602270056.
+2018-02-06 10:29:49 455 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: password].
+2018-02-06 10:29:49 498 INFO:Type value is: qw.
+2018-02-06 10:29:49 580 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: loginBtn]was clicked.
+2018-02-06 10:29:49 852 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> xpath: .//*[@id='win10-shortcuts']/div[contains(@onclick,"甲方合同")]]was clicked.
+2018-02-06 10:29:51 985 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> xpath: .//li[text()='我的审批']]was clicked.
+2018-02-06 10:29:57 205 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> xpath: /html/body/div[2]/div[2]/table/tbody/tr[1]/td[8]/div/a]was clicked.
+2018-02-06 10:29:59 284 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: spCommont].
+2018-02-06 10:29:59 332 INFO:Type value is: OK.
+2018-02-06 10:29:59 491 INFO:Element:[[ChromeDriver: chrome on XP (e558de6102a0460803dc66549b0f9bf9)] -> id: sp1Btn]was clicked.

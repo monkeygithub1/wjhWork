@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">   
+<suite name="Default Suite">   
+  <test name="SeleniumTest1">   
+    <classes>   
+      <class name="cpaTest.Cpa_001"/>
+      <class name="cpaTest.Cpa_002"/>
+      <class name="cpaTest.Cpa_003"/>
+      <class name="cpaTest.Cpa_004"/>
+      <class name="cpaTest.Cpa_005"/>
+      <class name="cpaTest.Cpa_006"/>
+      <class name="cpaTest.Cpa_007"/>
+      <class name="cpaTest.Cpa_008"/>
+      <class name="cpaTest.Cpa_009"/>   
+     <!-- 添加不同测试类文件 -->   
+    </classes>   
+  </test> <!-- Java_Learn -->   
+</suite> <!-- Default Suite -->  

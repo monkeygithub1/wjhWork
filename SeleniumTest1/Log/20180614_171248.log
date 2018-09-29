@@ -1,0 +1,4 @@
+2018-06-14 17:12:48 360 INFO:Start to select browser name from properties file
+2018-06-14 17:12:48 382 INFO:You had select test browser type is:Chrome
+2018-06-14 17:12:48 383 INFO:The test server URL is:http://192.168.2.253:9080/pmis
+2018-06-14 17:12:50 848 INFO:Lauching Chrome...

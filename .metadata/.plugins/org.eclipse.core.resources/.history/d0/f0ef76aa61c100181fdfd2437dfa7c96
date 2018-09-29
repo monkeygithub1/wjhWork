@@ -1,0 +1,69 @@
+package com.qa.tests;
+
+import org.testng.annotations.Test;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.qa.base.TestBase;
+import com.qa.data.Request;
+import com.qa.restclient.RestClient;
+import com.qa.util.TestUtil;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
+import org.testng.annotations.BeforeClass;
+
+	/*
+	 * 项目立项-安质部-一次性通过-非RT
+	 */
+public class ProjDemo{
+	String phone_create = "13910623294"; 
+	String phone_dept = "18502285517";//安质
+	String proj_name_= "顺顺ZZ";
+	String proj_mgr_ = "武军豪";
+	String proj_mgr_id_ = "3b8f52b4b8f54bd597557361efcb8736";
+	String dept_ = "安全质量部-c4fb1b9eba214363b23ad5a792897f61";
+	String proj_mgr_type_ = "P";
+	String ys_kphte= "2000";
+	TestBase testBase;
+	String url_proj_splist;
+	RestClient restClient;
+	Request request;
+	String url_upload = "https://pmistest.womow.cn/pmis/app/ms/file/projFileUpload";
+	String file = "E:\\tongfang.txt";
+	
+	@BeforeClass
+	public void setUp() {
+		testBase = new TestBase();
+		restClient = new RestClient();
+		request = new Request();
+		url_proj_splist = restClient.url("api_proj_splist");
+	}
+	@Test
+	public void login() throws ClientProtocolException, IOException {
+		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
+		request.login(headermap, phone_create);
+		String projId = request.projSave(headermap, proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
+		request.projBudge(headermap, projId, ys_kphte);
+		Map<String, String> para = new HashMap<String, String>();
+		Map<String,String> fileData = new HashMap<String,String>();
+		fileData.put("file", file);
+		System.out.println(headermap);
+		headermap.remove("Content-Type");
+		String closeableHttpResponse = restClient.post(url_upload, para, headermap, fileData);
+		System.out.println(closeableHttpResponse);
+		System.out.println(headermap);
+		
+//		request.login(headermap, phone_dept);//登录
+//		String list_ds = request.queryList(url_proj_splist, headermap);//查询待审列表
+//		JSONObject listJson = JSON.parseObject(list_ds);
+//		String taskId = TestUtil.getValueByJPath(listJson, "data[0]/taskId");
+//		request.projSp(headermap, projId, taskId, "1", "顺顺大猪蹄子");
+		
+  }
+}

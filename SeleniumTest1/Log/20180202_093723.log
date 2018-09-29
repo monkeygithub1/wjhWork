@@ -1,0 +1,29 @@
+2018-02-02 09:37:23 686 INFO:Start to select browser name from properties file
+2018-02-02 09:37:23 687 INFO:You had select test browser type is:Chrome
+2018-02-02 09:37:23 687 INFO:The test server URL is:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-02 09:37:27 292 INFO:Lauching Chrome...
+2018-02-02 09:37:30 382 INFO:Open URL:http://pmistest.womow.cn/pmis/views/login.jsp
+2018-02-02 09:37:31 502 INFO:Maximize browser...
+2018-02-02 09:37:31 506 INFO:Wait for 5seconds.
+2018-02-02 09:37:32 661 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: phoneUn].
+2018-02-02 09:37:32 725 INFO:Type value is: 13910623294.
+2018-02-02 09:37:32 785 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: password].
+2018-02-02 09:37:32 823 INFO:Type value is: qw.
+2018-02-02 09:37:32 907 INFO:Element:[[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: loginBtn]was clicked.
+2018-02-02 09:37:35 208 INFO:Element:[[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> xpath: .//*[@id='layui-layer1']/span[@class="layui-layer-setwin"]/a]was clicked.
+2018-02-02 09:37:36 295 INFO:Element:[[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: win10_btn_win]was clicked.
+2018-02-02 09:37:38 401 ERROR:unexpected alert open: {Alert text : }
+  (Session info: chrome=64.0.3282.119)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 8 milliseconds: null
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\wjh\AppData\Local\Temp\scoped_dir1004_5258}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=64.0.3282.119, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: d56df599e24b4d227d86b49e6b6ea8bc
+*** Element info: {Using=xpath, value=.//div[@onclick="logoutDo()"]}.
+2018-02-02 09:37:38 651 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: phoneUn].
+2018-02-02 09:37:38 712 INFO:Type value is: 18602634891.
+2018-02-02 09:37:38 772 INFO:Clean the value if any in [[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: password].
+2018-02-02 09:37:38 813 INFO:Type value is: qw.
+2018-02-02 09:37:38 897 INFO:Element:[[ChromeDriver: chrome on XP (d56df599e24b4d227d86b49e6b6ea8bc)] -> id: loginBtn]was clicked.
