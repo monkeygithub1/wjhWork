@@ -13,9 +13,9 @@ import org.testng.annotations.BeforeClass;
 	 */
 public class ProjDemo{
 	String phone_create = "13910623294"; 
-	String phone_dept = "18502285517";//安质
+	String phone_dept = "18502285517";//安质部
 	String phone_sybzjl = "13502103187";//事业部总经理
-	String phone_az = "18502285517";//安质负责人
+	String phone_az = "18502285517";//安质部负责人
 	String phone_sc = "18602270056";//生产副总
 	String proj_name_= "顺顺最帅-一次性通过";
 	String proj_name_refuse= "顺顺最帅-每个节点拒绝一次";
