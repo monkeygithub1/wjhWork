@@ -1,3 +1,4 @@
 .metadata/
-API_AutoDemo/test-output
-API_AutoDemo/target
+.recommenders/
+test-output
+target
