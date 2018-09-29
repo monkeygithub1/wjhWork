@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeClass;
 	 * 项目立项-安质部-一次性通过-非RT
 	 */
 public class ProjDemo{
-	String phone_create = "13910623294"; 
+	String phone_create = "13910623294";//发起人 
 	String phone_dept = "18502285517";//安质部
 	String phone_sybzjl = "13502103187";//事业部总经理
 	String phone_az = "18502285517";//安质部负责人
