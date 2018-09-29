@@ -1,3 +1,0 @@
-#HOST = https://reqres.in
-HOST = https://pmistest.womow.cn
-url_login = /pmis/safe/loginAjax

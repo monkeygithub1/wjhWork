@@ -1,6 +1,0 @@
-#HOST = https://reqres.in
-HOST = https://pmistest.womow.cn
-api_login = /pmis/safe/loginAjax
-######proj#####
-api_proj_splist = /pmis/proj/lx/queryWaitMeSpLxList
-api_proj_sp = /pmis/proj/lx/spDo
