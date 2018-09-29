@@ -30,8 +30,7 @@ public class ProjDemo{
 	@BeforeClass
 	public void setUp() {
 	}
-	//一次性通过
-	@Test
+	@Test//一次性通过
 	public void projDemo() throws ClientProtocolException, IOException {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String projId = "";
@@ -45,8 +44,7 @@ public class ProjDemo{
 		request.projSp(phone_az, headermap, projId, "1", "顺顺大猪蹄子");//安质负责人审批
 		request.projSp(phone_sc, headermap, projId, "1", "顺顺大猪蹄子");//生产副总审批
   }
-	//每个节点拒绝重发
-	@Test(priority=1)
+	@Test(priority=1)//每个节点拒绝重发
 	public void projDemoRefuse() throws ClientProtocolException, IOException{
 		Map<String, String> headermap = restClient.header();
 		String projId = "";
