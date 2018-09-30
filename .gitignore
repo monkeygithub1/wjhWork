@@ -1,4 +1,4 @@
-.metadata/
-.recommenders/
+.metadata
+.recommenders
 test-output
 target
