@@ -1,4 +1,4 @@
-package com.qa.tests;
+package com.qa.tried;
 
 
 public class NewTest {

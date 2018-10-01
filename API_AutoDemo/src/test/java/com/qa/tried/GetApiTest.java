@@ -1,4 +1,4 @@
-package com.qa.tests;
+package com.qa.tried;
 
 import java.io.IOException;
 import org.apache.http.client.ClientProtocolException;
