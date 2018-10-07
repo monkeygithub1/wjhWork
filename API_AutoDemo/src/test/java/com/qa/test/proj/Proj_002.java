@@ -2,29 +2,27 @@ package com.qa.test.proj;
 
 import java.io.IOException;
 import java.util.Map;
-
 import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.qa.data.Request;
 import com.qa.restclient.RestClient;
 /**
- * 职能部门（安质部）
+ * 业务部门（产品研发部）
  * P（非RT）
  * 一次性通过&每个节点拒绝后重发
  */
-public class Proj_001 {
+public class Proj_002 {
 	String phone_create = "13910623294";//发起 
-	String phone_dept = "18502285517";//安质部
-	String phone_sybzjl = "13502103187";//事业部总经理
+	String phone_dept = "18602634891";//部门
+	String phone_sybzjl = "13512968527";//事业部总经理
 	String phone_az = "18502285517";//安质部负责人
 	String phone_sc = "18602270056";//生产副总
-	String proj_name_= "顺顺最帅-职能-P-一次性通过";
-	String proj_name_refuse= "顺顺最帅-职能-P--每个节点拒绝一次";
+	String proj_name_= "顺顺最帅-业务-P-一次性通过";
+	String proj_name_refuse= "顺顺最帅-业务-P-每个节点拒绝一次";
 	String proj_mgr_ = "武军豪";
 	String proj_mgr_id_ = "3b8f52b4b8f54bd597557361efcb8736";
-	String dept_ = "安全质量部-c4fb1b9eba214363b23ad5a792897f61";
+	String dept_ = "产品研发部-c7c2d0bac07a41fabdd22f82dc3501be";
 	String proj_mgr_type_ = "P";
 	String ys_kphte= "2000";
 	RestClient restClient = new RestClient();

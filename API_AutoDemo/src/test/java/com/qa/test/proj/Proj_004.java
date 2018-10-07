@@ -9,23 +9,24 @@ import org.testng.annotations.Test;
 
 import com.qa.data.Request;
 import com.qa.restclient.RestClient;
+
 /**
- * 职能部门（安质部）
- * P（非RT）
+ * 业务部门（产品研发部）
+ * R
  * 一次性通过&每个节点拒绝后重发
  */
-public class Proj_001 {
+public class Proj_004 {
 	String phone_create = "13910623294";//发起 
-	String phone_dept = "18502285517";//安质部
-	String phone_sybzjl = "13502103187";//事业部总经理
-	String phone_az = "18502285517";//安质部负责人
-	String phone_sc = "18602270056";//生产副总
-	String proj_name_= "顺顺最帅-职能-P-一次性通过";
-	String proj_name_refuse= "顺顺最帅-职能-P--每个节点拒绝一次";
+	String phone_sybzjl = "13512968527";//事业部总经理
+	String phone_jsyjy = "13910623294";//技术研究院负责人
+	String phone_yyzj = "13910623294";//运营总监（哪个权限？）
+	String phone_boss = "13502103187";//总经理
+	String proj_name_= "顺顺最帅-业务-R-一次性通过";
+	String proj_name_refuse= "顺顺最帅-业务-R--每个节点拒绝一次";
 	String proj_mgr_ = "武军豪";
 	String proj_mgr_id_ = "3b8f52b4b8f54bd597557361efcb8736";
-	String dept_ = "安全质量部-c4fb1b9eba214363b23ad5a792897f61";
-	String proj_mgr_type_ = "P";
+	String dept_ = "产品研发部-c7c2d0bac07a41fabdd22f82dc3501be";
+	String proj_mgr_type_ = "R";
 	String ys_kphte= "2000";
 	RestClient restClient = new RestClient();
 	Request request = new Request();
@@ -43,44 +44,45 @@ public class Proj_001 {
 		request.projBudge(headermap, projId, ys_kphte);//新建预算信息
 		request.projUpload(projId, headermap);//上传附件
 		request.projApply(projId, headermap);//提交
-		request.projSp(phone_dept, headermap, projId, "1", "顺顺大猪蹄子");//部门领导审批
 		request.projSp(phone_sybzjl, headermap, projId, "1", "顺顺大猪蹄子");//事业部总经理审批
-		request.projSp(phone_az, headermap, projId, "1", "顺顺大猪蹄子");//安质负责人审批
-		request.projSp(phone_sc, headermap, projId, "1", "顺顺大猪蹄子");//生产副总审批
+		request.projSp(phone_jsyjy, headermap, projId, "1", "顺顺大猪蹄子");//技术研究院负责人审批
+		request.projSp(phone_yyzj, headermap, projId, "1", "顺顺大猪蹄子");//运营总监审批
+		request.projSp(phone_boss, headermap, projId, "1", "顺顺大猪蹄子");//总经理审批
   }
 	//每个节点拒绝重发
 	@Test(priority=1)
 	public void projRefuse() throws ClientProtocolException, IOException{
 		Map<String, String> headermap = restClient.header();
 		String projId = "";
-		//部门拒绝
-		request.login(headermap, phone_create);
-		projId = request.projSave(headermap, projId, proj_name_refuse, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
-		request.projBudge(headermap, projId, ys_kphte);
-		request.projUpload(projId, headermap);
-		request.projApply(projId, headermap);
-		request.projSp(phone_dept, headermap, projId, "2", "顺顺不是大猪蹄子");
+		//发起
+		request.login(headermap, phone_create);//登录
+		projId = request.projSave(headermap, projId, proj_name_refuse, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);//新建项目信息
+		request.projBudge(headermap, projId, ys_kphte);//新建预算信息
+		request.projUpload(projId, headermap);//上传附件
+		request.projApply(projId, headermap);//提交
 		//事业部总经理拒绝
-		this.projEdit(headermap, "拒绝重发", projId);
-		request.projSp(phone_dept, headermap, projId, "1", "顺顺大猪蹄子");
 		request.projSp(phone_sybzjl, headermap, projId, "2", "顺顺不是大猪蹄子");
-		//安质负责人拒绝
+		//技术研究院负责人拒绝
 		this.projEdit(headermap, "拒绝重发", projId);
-		request.projSp(phone_dept, headermap, projId, "1", "顺顺大猪蹄子");
 		request.projSp(phone_sybzjl, headermap, projId, "1", "顺顺大猪蹄子");
-		request.projSp(phone_az, headermap, projId, "2", "顺顺不是大猪蹄子");
-		//生产副总拒绝
+		request.projSp(phone_jsyjy, headermap, projId, "2", "顺顺不是大猪蹄子");
+		//运营总监拒绝
 		this.projEdit(headermap, "拒绝重发", projId);
-		request.projSp(phone_dept, headermap, projId, "1", "顺顺大猪蹄子");
 		request.projSp(phone_sybzjl, headermap, projId, "1", "顺顺大猪蹄子");
-		request.projSp(phone_az, headermap, projId, "1", "顺顺大猪蹄子");
-		request.projSp(phone_sc, headermap, projId, "2", "顺顺不是大猪蹄子");
+		request.projSp(phone_jsyjy, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_yyzj, headermap, projId, "2", "顺顺不是大猪蹄子");
+		//总经理拒绝
+		this.projEdit(headermap, "拒绝重发", projId);
+		request.projSp(phone_sybzjl, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_jsyjy, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_yyzj, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_boss, headermap, projId, "2", "顺顺大猪蹄子");
 		//通过
 		this.projEdit(headermap, "拒绝重发", projId);
-		request.projSp(phone_dept, headermap, projId, "1", "顺顺大猪蹄子");
 		request.projSp(phone_sybzjl, headermap, projId, "1", "顺顺大猪蹄子");
-		request.projSp(phone_az, headermap, projId, "1", "顺顺大猪蹄子");
-		request.projSp(phone_sc, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_jsyjy, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_yyzj, headermap, projId, "1", "顺顺大猪蹄子");
+		request.projSp(phone_boss, headermap, projId, "1", "顺顺大猪蹄子");
 	}
 	//简易版修改重发
 	public void projEdit(Map<String, String> headermap, String proj_name_edit, String projId) throws ClientProtocolException, IOException{
