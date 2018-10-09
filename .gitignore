@@ -1,5 +1,5 @@
 .metadata
 .recommenders
-test-output
-target
-bin
+test-output/
+target/
+bin/
