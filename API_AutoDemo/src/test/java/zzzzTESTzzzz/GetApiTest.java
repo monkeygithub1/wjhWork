@@ -1,4 +1,4 @@
-package com.qa.tried;
+package zzzzTESTzzzz;
 
 import java.io.IOException;
 import org.apache.http.client.ClientProtocolException;
@@ -10,9 +10,10 @@ import org.testng.annotations.Test;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.qa.base.TestBase;
-import com.qa.restclient.RestClient;
-import com.qa.util.TestUtil;
+
+import wjh.pmis.base.TestBase;
+import wjh.pmis.restclient.RestClient;
+import wjh.pmis.util.TestUtil;
 
 public class GetApiTest extends TestBase{
 	TestBase testBase;

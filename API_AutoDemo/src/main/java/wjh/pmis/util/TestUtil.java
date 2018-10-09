@@ -1,4 +1,4 @@
-package com.qa.util;
+package wjh.pmis.util;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

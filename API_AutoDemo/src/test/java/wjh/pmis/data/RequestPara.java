@@ -1,4 +1,4 @@
-package com.qa.data;
+package wjh.pmis.data;
 
 import java.util.HashMap;
 import java.util.Map;

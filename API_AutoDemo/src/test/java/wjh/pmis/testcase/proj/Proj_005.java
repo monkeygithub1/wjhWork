@@ -1,4 +1,4 @@
-package com.qa.test.proj;
+package wjh.pmis.testcase.proj;
 
 import java.io.IOException;
 import java.util.Map;
@@ -7,23 +7,23 @@ import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.qa.data.Request;
-import com.qa.restclient.RestClient;
+import wjh.pmis.data.Request;
+import wjh.pmis.restclient.RestClient;
 
 /**
- * 业务部门（产品研发部）
+ * 职能部门（安质部）
  * T
  * 一次性通过&每个节点拒绝后重发
  */
-public class Proj_006 {
+public class Proj_005 {
 	String phone_create = "13910623294";//发起 
 	String phone_hrmgr = "18698057506";//人力资源部负责人(什么权限？跑不通）
 	String phone_boss = "13502103187";//总经理
-	String proj_name_= "顺顺最帅-业务-T-一次性通过";
-	String proj_name_refuse= "顺顺最帅-业务-T--每个节点拒绝一次";
+	String proj_name_= "顺顺最帅-职能-T-一次性通过";
+	String proj_name_refuse= "顺顺最帅-职能-T--每个节点拒绝一次";
 	String proj_mgr_ = "武军豪";
 	String proj_mgr_id_ = "3b8f52b4b8f54bd597557361efcb8736";
-	String dept_ = "产品研发部-c7c2d0bac07a41fabdd22f82dc3501be";
+	String dept_ = "安全质量部-c4fb1b9eba214363b23ad5a792897f61";
 	String proj_mgr_type_ = "T";
 	String ys_kphte= "2000";
 	RestClient restClient = new RestClient();

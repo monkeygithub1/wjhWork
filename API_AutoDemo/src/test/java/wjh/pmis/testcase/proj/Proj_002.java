@@ -1,12 +1,13 @@
-package com.qa.test.proj;
+package wjh.pmis.testcase.proj;
 
 import java.io.IOException;
 import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.qa.data.Request;
-import com.qa.restclient.RestClient;
+
+import wjh.pmis.data.Request;
+import wjh.pmis.restclient.RestClient;
 /**
  * 业务部门（产品研发部）
  * P（非RT）

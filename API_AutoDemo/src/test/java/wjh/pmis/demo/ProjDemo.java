@@ -1,8 +1,10 @@
-package com.qa.demo;
+package wjh.pmis.demo;
 
 import org.testng.annotations.Test;
-import com.qa.data.Request;
-import com.qa.restclient.RestClient;
+
+import wjh.pmis.data.Request;
+import wjh.pmis.restclient.RestClient;
+
 import java.io.IOException;
 import java.util.Map;
 import org.apache.http.client.ClientProtocolException;

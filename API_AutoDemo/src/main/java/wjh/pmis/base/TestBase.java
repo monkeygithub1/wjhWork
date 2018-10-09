@@ -1,4 +1,4 @@
-package com.qa.base;
+package wjh.pmis.base;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -1,11 +1,12 @@
-package com.qa.data;
+package wjh.pmis.data;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
 import org.testng.Assert;
-import com.qa.restclient.RestClient;
+
+import wjh.pmis.restclient.RestClient;
 
 public class Request {
 	String upload_file = ".\\files_tools\\接口测试专用附件-顺顺最帅.txt";
