@@ -20,7 +20,7 @@ public class TestBase {
 	public TestBase(){
 		try{
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/qa/config/config.properties");
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/wjh/pmis/config/config.properties");
 			prop.load(fis);
 		}catch (FileNotFoundException e){
 			e.printStackTrace();

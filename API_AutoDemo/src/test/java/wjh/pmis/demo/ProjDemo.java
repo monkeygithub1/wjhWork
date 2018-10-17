@@ -52,12 +52,12 @@ public class ProjDemo{
 	public void projDemoRefuse() throws ClientProtocolException, IOException{
 		Map<String, String> headermap = restClient.header();
 		String projId = "";
-		//部门拒绝
 		request.login(headermap, phone_create);
 		projId = request.projSave(headermap, projId, proj_name_refuse, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
 		request.projBudge(headermap, projId, ys_kphte);
 		request.projUpload(projId, headermap);
 		request.projApply(projId, headermap);
+		//部门拒绝
 		request.projSp(phone_dept, headermap, projId, "2", "顺顺不是大猪蹄子");
 		//事业部总经理拒绝
 		this.projEdit(headermap, "拒绝重发", projId);
