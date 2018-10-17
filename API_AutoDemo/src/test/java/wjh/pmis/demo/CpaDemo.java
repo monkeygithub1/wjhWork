@@ -21,8 +21,8 @@ public class CpaDemo {
 	String phone_cpawz = "18502285517";
 	String phone_cpacw = "13820641813";
 	String phone_boss = "13502103187";
-	String cpa_name_= "顺顺最帅-一次性通过";
-	String cpa_name_refuse= "顺顺最帅-每个节点拒绝一次";
+	String cpa_name_= "甲方合同-顺顺最帅-一次性通过";
+	String cpa_name_refuse= "甲方合同-顺顺最帅-每个节点拒绝一次";
 	String money_ = "10000";
 	String dept_ = "安全质量部#S#c4fb1b9eba214363b23ad5a792897f61";
 	String nature_= "书面";
@@ -40,81 +40,81 @@ public class CpaDemo {
 	//一次性通过
 	@Test
 	public void cpaDemo() throws ClientProtocolException, IOException {
-	Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
-	String cpaId = "";
-	request.login(headermap, phone_create);//登录
-	cpaId = request.cpaSave(headermap, cpaId, cpa_name_, money_, dept_, nature_, type_, proj_, proj_id_, purchase_code_, purchase_id_);//保存合同信息
-	request.cpa_mo_Save(headermap, money_, cpaId);//保存付款计划
-	request.cpa_in_Save(headermap, money_, cpaId);//保存收票计划
-	request.cpaApply(headermap, cpaId);//提交
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpacw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_boss, cpaId, "1", "长鹏大沙雕");
+		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
+		String cpaId = "";
+		request.login(headermap, phone_create);//登录
+		cpaId = request.cpaSave(headermap, cpaId, cpa_name_, money_, dept_, nature_, type_, proj_, proj_id_, purchase_code_, purchase_id_);//保存合同信息
+		request.cpa_mo_Save(headermap, money_, cpaId);//保存付款计划
+		request.cpa_ii_Save(headermap, money_, cpaId);//保存收票计划
+		request.cpaApply(headermap, cpaId);//提交
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");//部门
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");//法务
+		request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");//分管领导
+		request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");//安质
+		request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");//物资
+		request.cpaSp(headermap, phone_cpacw, cpaId, "1", "长鹏大沙雕");//财务
+		request.cpaSp(headermap, phone_boss, cpaId, "1", "长鹏大沙雕");//总经理
 	}
 	//每个节点拒绝一次
-	@Test
+	@Test(priority=1)
 	public void cpaDemoRefuse() throws ClientProtocolException, IOException {
-	Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
-	String cpaId = "";
-	request.login(headermap, phone_create);//登录
-	cpaId = request.cpaSave(headermap, cpaId, cpa_name_refuse, money_, dept_, nature_, type_, proj_, proj_id_, purchase_code_, purchase_id_);//保存合同信息
-	request.cpa_mo_Save(headermap, money_, cpaId);//保存付款计划
-	request.cpa_in_Save(headermap, money_, cpaId);//保存收票计划
-	request.cpaApply(headermap, cpaId);//提交
-	//部门拒绝
-	request.cpaSp(headermap, phone_dept, cpaId, "2", "长鹏大沙雕");
-	//法务拒绝
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "2", "长鹏大沙雕");
-	//分管领导拒绝
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "2", "长鹏大沙雕");
-	//安质拒绝
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpaaz, cpaId, "2", "长鹏大沙雕");
-	//物资拒绝
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpawz, cpaId, "2", "长鹏大沙雕");
-	//财务拒绝
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpacw, cpaId, "2", "长鹏大沙雕");
-	//总经理拒绝
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpacw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_boss, cpaId, "2", "长鹏大沙雕");
-	//通过
-	this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
-	request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_cpacw, cpaId, "1", "长鹏大沙雕");
-	request.cpaSp(headermap, phone_boss, cpaId, "1", "长鹏大沙雕");
+		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
+		String cpaId = "";
+		request.login(headermap, phone_create);//登录
+		cpaId = request.cpaSave(headermap, cpaId, cpa_name_refuse, money_, dept_, nature_, type_, proj_, proj_id_, purchase_code_, purchase_id_);//保存合同信息
+		request.cpa_mo_Save(headermap, money_, cpaId);//保存付款计划
+		request.cpa_ii_Save(headermap, money_, cpaId);//保存收票计划
+		request.cpaApply(headermap, cpaId);//提交
+		//部门拒绝
+		request.cpaSp(headermap, phone_dept, cpaId, "2", "长鹏大沙雕");
+		//法务拒绝
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "2", "长鹏大沙雕");
+		//分管领导拒绝
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fg, cpaId, "2", "长鹏大沙雕");
+		//安质拒绝
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpaaz, cpaId, "2", "长鹏大沙雕");
+		//物资拒绝
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpawz, cpaId, "2", "长鹏大沙雕");
+		//财务拒绝
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpacw, cpaId, "2", "长鹏大沙雕");
+		//总经理拒绝
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpacw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_boss, cpaId, "2", "长鹏大沙雕");
+		//通过
+		this.cpaEdit(headermap, cpaId, "拒绝重发-长鹏还是沙雕");
+		request.cpaSp(headermap, phone_dept, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_fg, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpaaz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpawz, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_cpacw, cpaId, "1", "长鹏大沙雕");
+		request.cpaSp(headermap, phone_boss, cpaId, "1", "长鹏大沙雕");
 
 	}
 	//甲方合同基本信息简易修改（仅修改合同名称）

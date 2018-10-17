@@ -36,7 +36,7 @@ public class Request {
 	//项目立项：保存（返回projId）发起和编辑
 	public String projSave (Map<String, String> headermap, String projId, String proj_name_, String proj_mgr_, String proj_mgr_id_, String dept_, String proj_mgr_type_) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
-		Map<String, String> para = new RequestPara().proj_save_Para(projId, proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
+		Map<String, String> para = new RequestPara().proj_save_para(projId, proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
 		String url = restClient.url("api_proj_save");
 		String responseString = restClient.post(url, para, headermap);//返回结果为projId
 		return responseString;
@@ -44,7 +44,7 @@ public class Request {
 	//项目立项：预算保存
 	public void projBudge (Map<String, String> headermap, String proj_id_, String ys_kphte) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
-		Map<String, String> para = new RequestPara().proj_budge_Para(proj_id_, ys_kphte);
+		Map<String, String> para = new RequestPara().proj_budge_para(proj_id_, ys_kphte);
 		String url = restClient.url("api_proj_budge");
 		String responseString = restClient.post(url, para, headermap);//返回结果为ok
 		Assert.assertEquals(responseString, "ok", "ProjBudgeSave : request is not ok.");
@@ -67,7 +67,7 @@ public class Request {
 		para.put("projId", projId);
 		String url = restClient.url("api_proj_apply");
 		String responseString = restClient.post(url, para, headermap);
-		Assert.assertEquals(responseString, "ok", "ProjApply : code is not ok.");
+		Assert.assertEquals(responseString, "ok", "ProjApply : request is not ok.");
 	}
 	//项目立项审批
 	public void projSp (String phone_, Map<String, String> headermap, String projId, String sp, String comment) throws ClientProtocolException, IOException{
@@ -85,7 +85,7 @@ public class Request {
 	//甲方合同：保存（返回cpaId）发起和编辑
 	public String cpaSave (Map<String, String> headermap, String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_, String purchase_code_, String purchase_id_) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
-		Map<String, String> para = new RequestPara().cpa_sava_Para(id_, name_, money_, dept_, nature_, type_, proj_, proj_id_, purchase_code_, purchase_id_);
+		Map<String, String> para = new RequestPara().cpa_sava_para(id_, name_, money_, dept_, nature_, type_, proj_, proj_id_, purchase_code_, purchase_id_);
 		String url = restClient.url("api_cpa_sava");
 		String responseString = restClient.post(url, para, headermap);//返回结果为cpaId
 		return responseString;
@@ -93,16 +93,16 @@ public class Request {
 	//甲方合同：保存付款计划
 	public void cpa_mo_Save (Map<String, String> headermap, String plan_money_, String cpaId) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
-		Map<String, String> para = new RequestPara().cpa_mo_Para(plan_money_, cpaId);
+		Map<String, String> para = new RequestPara().cpa_mo_para(plan_money_, cpaId);
 		String url = restClient.url("api_cpa_mo");
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "CpaMoSave : request is not ok.");
 	}
 	//甲方合同：保存收票计划
-	public void cpa_in_Save (Map<String, String> headermap, String plan_money_, String cpaId) throws ClientProtocolException, IOException{
+	public void cpa_ii_Save (Map<String, String> headermap, String plan_money_, String cpaId) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
-		Map<String, String> para = new RequestPara().cpa_in_Para(plan_money_, cpaId);
-		String url = restClient.url("api_cpa_in");
+		Map<String, String> para = new RequestPara().cpa_ii_para(plan_money_, cpaId);
+		String url = restClient.url("api_cpa_ii");
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "CpaInSave : request is not ok.");
 	}
@@ -113,7 +113,7 @@ public class Request {
 		para.put("cpaId", cpaId);
 		String url = restClient.url("api_cpa_apply");
 		String responseString = restClient.post(url, para, headermap);
-		Assert.assertEquals(responseString, "ok", "CpaApply : code is not ok.");
+		Assert.assertEquals(responseString, "ok", "CpaApply : request is not ok.");
 	}
 	//甲方合同：审批
 	public void cpaSp(Map<String, String> headermap, String phone_, String cpaId, String sp, String comment) throws ClientProtocolException, IOException{
@@ -125,6 +125,51 @@ public class Request {
 		Map<String, String> para = new RequestPara().cpa_sp_para(cpaId, taskId, sp, comment);
 		String url = restClient.url("api_cpa_sp");
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
-		Assert.assertEquals(responseString, "ok", "ProjSp : request is not ok.");	
+		Assert.assertEquals(responseString, "ok", "CpaSp : request is not ok.");	
+	}
+	//乙方合同：保存（返回cpbId）发起和编辑
+	public String cpbSave (Map<String, String> headermap, String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().cpb_sava_para(id_, name_, money_, dept_, nature_, type_, proj_, proj_id_);
+		String url = restClient.url("api_cpb_save");
+		String responseString = restClient.post(url, para, headermap);//返回结果为cpaId
+		return responseString;
+	}
+	//乙方合同：保存收款计划
+	public void cpb_mi_Save (Map<String, String> headermap, String plan_money_, String cpbId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().cpb_mi_para(plan_money_, cpbId);
+		String url = restClient.url("api_cpb_mi");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "CpbMiSave : request is not ok.");
+	}
+	//乙方合同：保存开票计划
+	public void cpb_io_Save (Map<String, String> headermap, String plan_money_, String cpbId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().cpb_io_para(plan_money_, cpbId);
+		String url = restClient.url("api_cpb_io");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "CpbIoSave : request is not ok.");
+	}
+	//乙方合同：发起申请
+	public void cpbApply (Map<String, String> headermap, String cpbId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("cpbId", cpbId);
+		String url = restClient.url("api_cpb_apply");
+		String responseString = restClient.post(url, para, headermap);
+		Assert.assertEquals(responseString, "ok", "CpbApply : request is not ok.");
+	}
+	//乙方合同：审批
+	public void cpbSp(Map<String, String> headermap, String phone_, String cpbId, String sp, String comment) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_cpb_splist");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String taskId = restClient.getValue(list, "data[0]/taskId");
+		Map<String, String> para = new RequestPara().cpb_sp_para(cpbId, taskId, sp, comment);
+		String url = restClient.url("api_cpb_sp");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "CpbSp : request is not ok.");	
 	}
 }

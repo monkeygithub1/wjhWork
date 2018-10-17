@@ -15,8 +15,8 @@ public class RequestPara {
 		para.put("imageVliadCode", imageVliadCode);
 		return para;
 	}
-	//项目立项保存（发起和编辑）
-	public Map<String, String> proj_save_Para(String projId, String proj_name_, String proj_mgr_, String proj_mgr_id_, String dept_, String proj_mgr_type_){
+	//项目立项：保存（发起和编辑）
+	public Map<String, String> proj_save_para(String projId, String proj_name_, String proj_mgr_, String proj_mgr_id_, String dept_, String proj_mgr_type_){
 		Map<String, String> para = new HashMap<String, String>();
 		para.put("id_", projId);
 		para.put("ch_proj_id_", "");
@@ -42,8 +42,8 @@ public class RequestPara {
 		para.put("descript_", "你们都是大猪蹄子");
 		return para;
 	}
-	//项目立项预算信息保存
-	public Map<String, String> proj_budge_Para(String proj_id_, String ys_kphte){
+	//项目立项：预算信息保存
+	public Map<String, String> proj_budge_para(String proj_id_, String ys_kphte){
 		Map<String, String> para = new HashMap<String, String>();
 		para.put("proj_id_", proj_id_);
 		para.put("ys_kphte", ys_kphte);
@@ -69,7 +69,7 @@ public class RequestPara {
 //		bz_sbzlf bz_psf bz_ldbhf bz_qt bz_xmfscb bz_rgcb bz_bgf bz_xmcbl bz_zlf bz_xmmll bz_clfhs
 		return para;
 	}	
-	//项目立项审批
+	//项目立项：审批
 	public Map<String, String> proj_sp_para (String projId, String taskId, String sp, String comment){
 		Map<String, String> para = new HashMap<String, String>();
 		para.put("projId", projId);
@@ -78,8 +78,8 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
-	//甲方合同基本信息保存
-	public Map<String, String> cpa_sava_Para(String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_, String purchase_code_, String purchase_id_){
+	//甲方合同：基本信息保存
+	public Map<String, String> cpa_sava_para(String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_, String purchase_code_, String purchase_id_){
 		Map<String, String> para = new HashMap<String, String>();
 		para.put("id_", id_);
 		para.put("name_", name_+ "-" + Long.toString(System.currentTimeMillis()));
@@ -98,8 +98,8 @@ public class RequestPara {
 		para.put("descript_", "甲方合同专用备注");
 		return para;
 	}
-	//甲方合同付款计划保存
-	public Map<String, String> cpa_mo_Para(String plan_money_, String cpaId){
+	//甲方合同：付款计划保存
+	public Map<String, String> cpa_mo_para(String plan_money_, String cpaId){
 		Map<String, String> para = new HashMap<String, String>();
 		para.put("moBili", "10:0");
 		JSONArray mop = new JSONArray();
@@ -113,8 +113,8 @@ public class RequestPara {
 		para.put("contrId", cpaId);
 		return para;
 	}
-	//甲方合同收票计划保存
-	public Map<String, String> cpa_in_Para(String plan_money_, String cpaId){
+	//甲方合同：收票计划保存
+	public Map<String, String> cpa_ii_para(String plan_money_, String cpaId){
 		Map<String, String> para = new HashMap<String, String>();
 		JSONArray iip = new JSONArray();
 		JSONObject iip_details = new JSONObject();
@@ -127,7 +127,7 @@ public class RequestPara {
 		para.put("contrId", cpaId);
 		return para;
 	}
-	//甲方合同审批
+	//甲方合同：审批
 	public Map<String, String> cpa_sp_para (String cpaId, String taskId, String sp, String comment){
 		Map<String, String> para = new HashMap<String, String>();
 		para.put("cpaId", cpaId);
@@ -136,5 +136,64 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
-
+	//乙方合同：基本信息保存
+	public Map<String, String> cpb_sava_para(String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("id_", id_);
+		para.put("name_", name_+ "-" + Long.toString(System.currentTimeMillis()));
+		para.put("money_", money_);
+		para.put("dept_", dept_);
+		para.put("qa_time_", "11");
+		para.put("qa_time_unit_", "月");
+		para.put("yxq_st_", "2018-08-16");
+		para.put("yxq_et_", "2019-08-16");
+		para.put("yxq_time_", "12");
+		para.put("yxq_time_unit_", "月");
+		para.put("nature_", nature_);
+		para.put("type_", type_);
+		para.put("pa_qddw_", "天津市政府");
+		para.put("pb_qddw_", "天津天才博通科技有限公司");
+		para.put("proj_", proj_);
+		para.put("proj_id_", proj_id_);
+		para.put("descript_", "乙方合同专用备注");
+		return para;
+	}
+	//乙方合同：收款计划保存
+	public Map<String, String> cpb_mi_para(String plan_money_, String cpbId){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("miBili", "10:0");
+		JSONArray mip = new JSONArray();
+		JSONObject mip_details = new JSONObject();
+		mip_details.put("plan_money_", plan_money_);
+		mip_details.put("plan_date_", "2018-09-06");
+		mip_details.put("condition_", "收款条件很多");
+		mip_details.put("remarks_", "要啥备注");
+		mip.add(0, mip_details);
+		para.put("mip", mip.toString());
+		para.put("contrId", cpbId);
+		return para;
+	}
+	//乙方合同：开票计划保存
+	public Map<String, String> cpb_io_para(String plan_money_, String cpbId){
+		Map<String, String> para = new HashMap<String, String>();
+		JSONArray iop = new JSONArray();
+		JSONObject iop_details = new JSONObject();
+		iop_details.put("plan_money_", plan_money_);
+		iop_details.put("plan_date_", "2018-09-06");
+		iop_details.put("condition_", "开票条件很多");
+		iop_details.put("remarks_", "要啥备注");
+		iop.add(0, iop_details);
+		para.put("iop", iop.toString());
+		para.put("contrId", cpbId);
+		return para;
+	}
+	//乙方合同：审批
+	public Map<String, String> cpb_sp_para (String cpbId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("cpbId", cpbId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
 }
