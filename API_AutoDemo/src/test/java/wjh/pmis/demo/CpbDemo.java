@@ -9,7 +9,10 @@ import org.testng.annotations.Test;
 
 import wjh.pmis.data.Request;
 import wjh.pmis.restclient.RestClient;
-
+	/*
+	 * 乙方合同-安质部-书面
+	 * 框架合同需要单独加一个参数：is_frame_=1
+	 */
 public class CpbDemo {
 	String phone_create = "13910623294";//发起人 
 	String phone_dept = "18502285517";//安质部

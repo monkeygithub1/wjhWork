@@ -196,4 +196,124 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
+	/*
+	 * 费用报销：发起
+	 * 1、报销明细只有一条，所以总金额与明细金额相等
+	 * 2、报销人与收款人是同一个人
+	 * 样式：
+		 {
+			"saveFilePath":"",
+			"fybxDto":{
+		        "projId":"0f241d5264ad44f58798ad93c645836e",
+		        ......
+		    },
+	    	"details":[
+	        	{
+		            "amount":"111",
+		            ...
+		        }
+	    	],
+		    "recieve":[
+		        {
+		            "userId":"3b8f52b4b8f54bd597557361efcb8736",
+		            ...
+		        }
+		    ]
+		}
+	 */
+	public Map<String, String> fybx_para(String projId, String projCode, String projName, String money, String bxType, String bxrIds, String bxrNames, String pmo, String typeFlag){
+		JSONObject fybxDto = new JSONObject();
+		fybxDto.put("projId", projId);
+		fybxDto.put("projCode", projCode);
+		fybxDto.put("projName", projName);
+		fybxDto.put("totalAmount", money);//总报销金额
+		fybxDto.put("bxrIds", bxrIds);
+		fybxDto.put("bxrNames", bxrNames);
+		fybxDto.put("pmo", pmo);
+		fybxDto.put("typeFlag", typeFlag);//特定类型，cz,cg
+		fybxDto.put("xjAmount", 0);
+		fybxDto.put("xjTip", "");
+		fybxDto.put("czJson", "");
+
+		JSONArray details = new JSONArray();
+		JSONObject details_type = new JSONObject();
+		details_type.put("amount", money);//明细报销金额
+		details_type.put("bxType", bxType);
+		details_type.put("tip", "顺顺大猪蹄子");
+		details.add(0, details_type);
+
+		JSONArray recieve = new JSONArray();
+		JSONObject recieve_user = new JSONObject();
+		recieve_user.put("userId", bxrIds);
+		recieve_user.put("userName", bxrNames);
+		recieve_user.put("paymentAmount", money);
+		recieve_user.put("paymentMethod", "银行卡");
+		recieve_user.put("tip", "顺顺大猪蹄子");
+		recieve.add(0, recieve_user);
+
+		JSONObject fybxJson  = new JSONObject();
+		fybxJson.put("saveFilePath","");
+		fybxJson.put("fybxDto", fybxDto);
+		fybxJson.put("details", details);
+		fybxJson.put("recieve", recieve);
+		
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("bxJson", fybxJson.toString());
+		return para;
+	}
+	//费用报销：编辑
+	public Map<String, String> fybx_update_para(String projId, String projCode, String projName, String money, String bxType, String bxrIds, String bxrNames, String pmo, String typeFlag, String fybxId){
+		JSONObject fybxDto = new JSONObject();
+		fybxDto.put("projId", projId);
+		fybxDto.put("projCode", projCode);
+		fybxDto.put("projName", projName);
+		fybxDto.put("totalAmount", money);//总报销金额
+		fybxDto.put("bxrIds", bxrIds);
+		fybxDto.put("bxrNames", bxrNames);
+		fybxDto.put("pmo", pmo);
+		fybxDto.put("typeFlag", typeFlag);//特定类型，cz,cg
+		fybxDto.put("xjAmount", 0);
+		fybxDto.put("xjTip", "");
+		fybxDto.put("czJson", "");
+		fybxDto.put("id",fybxId);//编辑
+		fybxDto.put("procStatus",2);//编辑
+
+		JSONArray details = new JSONArray();
+		JSONObject details_type = new JSONObject();
+		details_type.put("amount", money);//明细报销金额
+		details_type.put("bxType", bxType);
+		details_type.put("tip", "顺顺大猪蹄子");
+		details.add(0, details_type);
+
+		JSONArray recieve = new JSONArray();
+		JSONObject recieve_user = new JSONObject();
+		recieve_user.put("userId", bxrIds);
+		recieve_user.put("userName", bxrNames);
+		recieve_user.put("paymentAmount", money);
+		recieve_user.put("paymentMethod", "银行卡");
+		recieve_user.put("tip", "顺顺大猪蹄子");
+		recieve.add(0, recieve_user);
+
+		JSONObject fybxJson  = new JSONObject();
+		fybxJson.put("saveFilePath",fybxId);//编辑
+		fybxJson.put("fybxDto", fybxDto);
+		fybxJson.put("details", details);
+		fybxJson.put("recieve", recieve);
+		
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("bxJson", fybxJson.toString());
+		return para;
+	}
+	//费用报销：审批
+	public Map<String, String> fybx_sp_para (String fybxId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("fybxId", fybxId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
+	//差旅报销
+
+
 }

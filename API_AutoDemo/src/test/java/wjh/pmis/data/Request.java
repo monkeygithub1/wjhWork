@@ -132,7 +132,7 @@ public class Request {
 		RestClient restClient =  new RestClient();
 		Map<String, String> para = new RequestPara().cpb_sava_para(id_, name_, money_, dept_, nature_, type_, proj_, proj_id_);
 		String url = restClient.url("api_cpb_save");
-		String responseString = restClient.post(url, para, headermap);//返回结果为cpaId
+		String responseString = restClient.post(url, para, headermap);//返回结果为cpbId
 		return responseString;
 	}
 	//乙方合同：保存收款计划
@@ -161,7 +161,7 @@ public class Request {
 		Assert.assertEquals(responseString, "ok", "CpbApply : request is not ok.");
 	}
 	//乙方合同：审批
-	public void cpbSp(Map<String, String> headermap, String phone_, String cpbId, String sp, String comment) throws ClientProtocolException, IOException{
+	public void cpbSp (Map<String, String> headermap, String phone_, String cpbId, String sp, String comment) throws ClientProtocolException, IOException{
 		this.login(headermap, phone_);
 		RestClient restClient = new RestClient();
 		String url_list = restClient.url("api_cpb_splist");
@@ -172,4 +172,42 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "CpbSp : request is not ok.");	
 	}
+	//费用报销：发起申请
+	public void fybxApply (Map<String, String> headermap, String projId, String projCode, String projName, String money, String bxType, String bxrIds, String bxrNames, String pmo, String typeFlag) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().fybx_para(projId, projCode, projName, money, bxType, bxrIds, bxrNames, pmo, typeFlag);
+		String url = restClient.url("api_fybx_apply");
+		String responseString = restClient.post(url, para, headermap);//返回结果为ok
+		Assert.assertEquals(responseString, "ok", "FybxApply : request is not ok.");
+	}
+	//费用报销：编辑
+	public void fybxUpdate (Map<String, String> headermap, String projId, String projCode, String projName, String money, String bxType, String bxrIds, String bxrNames, String pmo, String typeFlag, String fybxId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().fybx_update_para(projId, projCode, projName, money, bxType, bxrIds, bxrNames, pmo, typeFlag, fybxId);
+		String url = restClient.url("api_fybx_update");
+		String responseString = restClient.post(url, para, headermap);//返回结果为ok
+		Assert.assertEquals(responseString, "ok", "FybxApply : request is not ok.");
+	}
+	//费用报销：获取fybxId
+	public String getFybxId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_fybx_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String fybxId = restClient.getValue(list, "data[0]/id_");
+		return fybxId;
+	}
+	//费用报销：审批
+	public void fybxSp (Map<String, String> headermap, String phone_, String fybxId, String sp, String comment) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_fybx_splist");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String taskId = restClient.getValue(list, "data[0]/taskId");
+		Map<String, String> para = new RequestPara().fybx_sp_para(fybxId, taskId, sp, comment);
+		String url = restClient.url("api_fybx_sp");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "FybxSp : request is not ok.");	
+	}
+
+
 }
