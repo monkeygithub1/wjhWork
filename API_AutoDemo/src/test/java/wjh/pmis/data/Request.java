@@ -208,6 +208,41 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "FybxSp : request is not ok.");	
 	}
-
+	//差旅报销：发起申请
+	public void clbxApply (Map<String, String> headermap, String projId, String projCode, String projName, double money, String bxrIds, String bxrNames, String pmo, String typeFlag) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().clbx_para(headermap, projId, projCode, projName, money, bxrIds, bxrNames, pmo, typeFlag);
+		String url = restClient.url("api_clbx_apply");
+		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "ClbxApply : request is not 操作成功！.");
+	}
+	//差旅报销：编辑
+	public void clbxUpdate (Map<String, String> headermap, String projId, String projCode, String projName, double money, String bxrIds, String bxrNames, String pmo, String typeFlag, String clbxId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().clbx_update_para(headermap, projId, projCode, projName, money, bxrIds, bxrNames, pmo, typeFlag, clbxId);
+		String url = restClient.url("api_clbx_update");
+		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "ClbxApply : request is not 操作成功！.");
+	}
+	//差旅报销：获取clbxId
+	public String getClbxId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_clbx_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String clbxId = restClient.getValue(list, "data[0]/id_");
+		return clbxId;
+	}
+	//差旅报销：审批
+	public void clbxSp (Map<String, String> headermap, String phone_, String clbxId, String sp, String comment) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_clbx_splist");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String taskId = restClient.getValue(list, "data[0]/taskId");
+		Map<String, String> para = new RequestPara().clbx_sp_para(clbxId, taskId, sp, comment);
+		String url = restClient.url("api_clbx_sp");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "ClbxSp : request is not ok.");	
+	}
 
 }

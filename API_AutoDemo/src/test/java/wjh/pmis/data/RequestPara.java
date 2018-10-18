@@ -1,10 +1,18 @@
 package wjh.pmis.data;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import org.apache.http.client.ClientProtocolException;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import wjh.pmis.restclient.RestClient;
 
 public class RequestPara {
 	//登录
@@ -313,7 +321,148 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
-	//差旅报销
+	//差旅报销：发起
+	public Map<String, String> clbx_para(Map<String,String> headermap, String projId, String projCode, String projName, 
+			double money, String bxrIds, String bxrNames, String pmo, String typeFlag) throws ClientProtocolException, IOException{
+		//获取出行信息（搜索，并截取第一个信息）
+		RestClient restClient =  new RestClient();
+		Map<String, String> para_cx = new HashMap<String,String>();
+		para_cx.put("keyword", "李");//搜索“李”
+		String url = restClient.url("api_chuxing_list");
+		String cxAll = restClient.post(url, para_cx, headermap);
+		String cx = restClient.getValue(cxAll, "data[0]");
+		String cxrName = restClient.getValue(cx, "proposerName");
+		String cxrId = restClient.getValue(cx, "proposer");
+		ObjectMapper om = new ObjectMapper();
+		Map<String,Object> chuxing = om.readValue(cx, Map.class);//把响应的出行信息转换
+		List<Map<String,Object>> chuxings = new ArrayList<>();
+		chuxings.add(chuxing);
+		
+		JSONObject clbxDto = new JSONObject();
+		clbxDto.put("projId", projId);
+		clbxDto.put("projCode", projCode);
+		clbxDto.put("projName", projName);
+		clbxDto.put("totalAmount", String.valueOf(money+100.00));//总报销金额
+		clbxDto.put("bxrIds", cxrId);//报销人是出行人，可从出行中获取
+		clbxDto.put("bxrNames", cxrName);
+		clbxDto.put("pmo", pmo);
+		clbxDto.put("typeFlag", typeFlag);//特定类型，cz,cg
+		clbxDto.put("subsidyAmount", "100");//补助金额固定为100
+		clbxDto.put("xjAmount", 0);
+		clbxDto.put("xjTip", "");
+		clbxDto.put("czJson", "");
 
+		JSONArray details = new JSONArray();
+		JSONObject details_type = new JSONObject();
+		details_type.put("bxType", "traffic");
+		details_type.put("amount", String.valueOf(money));//明细报销金额
+		details_type.put("travelToolName", "火车硬卧");
+		details_type.put("travelFromAddr", "北京");
+		details_type.put("travelToAddr", "天津");
+		details_type.put("stayCity", "");
+		details_type.put("st", "2018-10-17 00:00:00");
+		details_type.put("et", "2018-10-25 00:00:00");
+		details_type.put("clUserIds", cxrId);//出行人，可从出行中获取
+		details_type.put("clUserNames", cxrName);
+		details_type.put("tip", "顺顺大猪蹄子");
+		details.add(0, details_type);
+
+		JSONArray recieve = new JSONArray();
+		JSONObject recieve_user = new JSONObject();
+		recieve_user.put("userId", bxrIds);//收款人是发起人
+		recieve_user.put("userName", bxrNames);
+		recieve_user.put("paymentAmount", String.valueOf(money+100.00));
+		recieve_user.put("paymentMethod", "银行卡");
+		recieve_user.put("tip", "顺顺大猪蹄子");
+		recieve.add(0, recieve_user);
+
+		JSONObject cybxJson  = new JSONObject();
+		cybxJson.put("saveFilePath","");
+		cybxJson.put("clbxDto", clbxDto);
+		cybxJson.put("details", details);
+		cybxJson.put("recieve", recieve);
+		cybxJson.put("chuxings", chuxings);
+		
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("bxJson", cybxJson.toString());
+		return para;
+	}
+	//差旅报销：编辑
+	public Map<String, String> clbx_update_para(Map<String,String> headermap, String projId, String projCode, String projName, 
+			double money, String bxrIds, String bxrNames, String pmo, String typeFlag, String clbxId) throws ClientProtocolException, IOException{
+		//获取出行信息（搜索，并截取第一个信息）
+		RestClient restClient =  new RestClient();
+		Map<String, String> para_cx = new HashMap<String,String>();
+		para_cx.put("keyword", "李");//搜索“李”
+		String url = restClient.url("api_chuxing_list");
+		String cxAll = restClient.post(url, para_cx, headermap);
+		String cx = restClient.getValue(cxAll, "data[0]");
+		String cxrName = restClient.getValue(cx, "proposerName");
+		String cxrId = restClient.getValue(cx, "proposer");
+		ObjectMapper om = new ObjectMapper();
+		Map<String,Object> chuxing = om.readValue(cx, Map.class);//把响应的出行信息转换
+		List<Map<String,Object>> chuxings = new ArrayList<>();
+		chuxings.add(chuxing);
+		
+		JSONObject clbxDto = new JSONObject();
+		clbxDto.put("projId", projId);
+		clbxDto.put("projCode", projCode);
+		clbxDto.put("projName", projName);
+		clbxDto.put("totalAmount", String.valueOf(money+100.00));//总报销金额
+		clbxDto.put("bxrIds", cxrId);//报销人是出行人，可从出行中获取
+		clbxDto.put("bxrNames", cxrName);
+		clbxDto.put("pmo", pmo);
+		clbxDto.put("typeFlag", typeFlag);//特定类型，cz,cg
+		clbxDto.put("subsidyAmount", "100");//补助金额固定为100
+		clbxDto.put("xjAmount", 0);
+		clbxDto.put("xjTip", "");
+		clbxDto.put("czJson", "");
+		clbxDto.put("id", clbxId);
+		clbxDto.put("procStatus", "2");
+
+		JSONArray details = new JSONArray();
+		JSONObject details_type = new JSONObject();
+		details_type.put("bxType", "traffic");
+		details_type.put("amount", String.valueOf(money));//明细报销金额
+		details_type.put("travelToolName", "火车硬卧");
+		details_type.put("travelFromAddr", "北京");
+		details_type.put("travelToAddr", "天津");
+		details_type.put("stayCity", "");
+		details_type.put("st", "2018-10-17 00:00:00");
+		details_type.put("et", "2018-10-25 00:00:00");
+		details_type.put("clUserIds", cxrId);//出行人，可从出行中获取
+		details_type.put("clUserNames", cxrName);
+		details_type.put("tip", "顺顺大猪蹄子");
+		details.add(0, details_type);
+
+		JSONArray recieve = new JSONArray();
+		JSONObject recieve_user = new JSONObject();
+		recieve_user.put("userId", bxrIds);//收款人是发起人
+		recieve_user.put("userName", bxrNames);
+		recieve_user.put("paymentAmount", String.valueOf(money+100.00));
+		recieve_user.put("paymentMethod", "银行卡");
+		recieve_user.put("tip", "顺顺大猪蹄子");
+		recieve.add(0, recieve_user);
+
+		JSONObject cybxJson  = new JSONObject();
+		cybxJson.put("saveFilePath",clbxId);
+		cybxJson.put("clbxDto", clbxDto);
+		cybxJson.put("details", details);
+		cybxJson.put("recieve", recieve);
+		cybxJson.put("chuxings", chuxings);
+		
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("bxJson", cybxJson.toString());
+		return para;
+	}
+	//差旅报销：审批
+	public Map<String, String> clbx_sp_para (String clbxId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("clbxId", clbxId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
 
 }
