@@ -464,5 +464,363 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
-
+	//采购申请（自用物资）
+	public Map<String, String> purchase_zywz_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "0");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("reason", "顺顺活得不如咸鱼！！");
+		table.put("content", "");
+		table.put("supplier", "");
+		table.put("sjr", "武先森");
+		table.put("lxdh", "110");
+		table.put("shdz", "大王庄CBD");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "物资名称");
+		key.put("b", "品牌");
+		key.put("c", "具体型号配置");
+		key.put("num", "数量");
+		key.put("e", "单位");
+		key.put("unitPrice", "预计采购单价/元");
+		key.put("totalPrice", "预计采购总价/元");
+		key.put("h", "推荐供应商");
+		JSONObject value = new JSONObject();
+		value.put("a", "手机");
+		value.put("b", "苹果");
+		value.put("c", "苹果XSSSSSSS");
+		value.put("num", "1");
+		value.put("e", "车");
+		value.put("unitPrice", "998");
+		value.put("totalPrice", "998");
+		value.put("h", "二手东");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（项目物资）
+	public Map<String, String> purchase_xmwz_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "1");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("reason", "顺顺活得不如咸鱼！！");
+		table.put("sjr", "武先森");
+		table.put("lxdh", "110");
+		table.put("shdz", "大王庄CBD");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "物资名称");
+		key.put("b", "具体型号配置");
+		key.put("num", "数量");
+		key.put("d", "单位");
+		key.put("unitPrice", "预计采购单价/元");
+		key.put("totalPrice", "预计采购总价/元");
+		key.put("gongyingshang", "推荐供应商");
+		JSONObject value = new JSONObject();
+		value.put("a", "手机");
+		value.put("b", "苹果");
+		value.put("num", "1");
+		value.put("d", "车");
+		value.put("unitPrice", "998");
+		value.put("totalPrice", "998");
+		value.put("gongyingshang", "二手东");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（人力外包）
+	public Map<String, String> purchase_rlwb_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "2");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("reason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "类别");
+		key.put("b", "级别");
+		key.put("c", "人数/人");
+		key.put("d", "预计人天单价/元");
+		key.put("e", "开始日期");
+		key.put("f", "结束日期");
+		key.put("g", "地点");
+		key.put("h", "推荐供应商");
+		key.put("i", "报价");
+		JSONObject value = new JSONObject();
+		value.put("a", "外包测试");
+		value.put("b", "SSS");
+		value.put("c", "10");
+		value.put("d", "250");
+		value.put("e", "2018-10-10");
+		value.put("f", "2019-10-10");
+		value.put("g", "大王庄CBD");
+		value.put("h", "淘客科技");
+		value.put("i", "2500");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（业务外包/其他服务采购）
+	public Map<String, String> purchase_ywqt_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "3");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("reason", "顺顺活得不如咸鱼！！");
+		table.put("content", "云服务");
+		table.put("supplier", "华为云");
+		JSONArray goods = new JSONArray();
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（项目物资框架）
+	public Map<String, String> purchase_xmwzkj_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "4");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("reason", "顺顺活得不如咸鱼！！");
+		table.put("sjr", "常小黑");
+		table.put("lxdh", "110");
+		table.put("shdz", "大王庄CBD");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "名称");
+		key.put("b", "品牌");
+		key.put("c", "具体型号配置");
+		key.put("num", "数量");
+		key.put("d", "单位");
+		key.put("unitPrice", "预计采购单价/元");
+		key.put("unitPrice1", "销售单价/元");
+		key.put("totalPrice", "预计采购总价/元");
+		key.put("totalPrice1", "销售总价/元");
+		key.put("gongyingshang", "推荐供应商");
+		JSONObject value = new JSONObject();
+		value.put("a", "手机");
+		value.put("b", "苹果");
+		value.put("c", "苹果XSSSSSSS");
+		value.put("num", "1");
+		value.put("d", "车");
+		value.put("unitPrice", "998");
+		value.put("unitPrice1", "1998");
+		value.put("totalPrice", "998");
+		value.put("totalPrice1", "1998");
+		value.put("gongyingshang", "二手东");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（综合费用）
+	public Map<String, String> purchase_zhfy_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "5");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("tip", "顺顺翻身");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "地点及费用名称");
+		key.put("b", "费用开始时间");
+		key.put("c", "费用截至时间");
+		key.put("d", "供应商");
+		key.put("e", "单位");
+		key.put("f", "开户行");
+		key.put("g", "账号");
+		key.put("totalPrice", "金额");
+		JSONObject value = new JSONObject();
+		value.put("a", "鼎泰买电脑");
+		value.put("b", "2018-10-10");
+		value.put("c", "2019-10-10");
+		value.put("d", "某宝");
+		value.put("e", "个");
+		value.put("f", "大王庄银行");
+		value.put("g", "88772288");
+		value.put("totalPrice", "1998");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（人力资源）
+	public Map<String, String> purchase_rlzy_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "6");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("tip", "顺顺翻身");
+		table.put("money_neibu", "1000.00");
+		table.put("money_waibu", "2000.00");
+		JSONArray table_neibu = new JSONArray();
+		JSONObject key_neibu = new JSONObject();
+		key_neibu.put("totalPrice1", "金额/元");
+		key_neibu.put("b1", "分类");
+		key_neibu.put("c1", "供应商");
+		key_neibu.put("d1", "备注");
+		JSONObject value_neibu = new JSONObject();
+		value_neibu.put("totalPrice1", "1000");
+		value_neibu.put("b1", "工资");
+		value_neibu.put("c1", "万贸");
+		value_neibu.put("d1", "发工资");
+		table_neibu.add(0, key_neibu);
+		table_neibu.add(1, value_neibu);
+		JSONArray table_waibu = new JSONArray();
+		JSONObject key_waibubu = new JSONObject();
+		key_waibubu.put("totalPrice1", "金额/元");
+		key_waibubu.put("b1", "分类");
+		key_waibubu.put("c1", "供应商");
+		key_waibubu.put("d1", "备注");
+		JSONObject value_waibubu = new JSONObject();
+		value_waibubu.put("totalPrice1", "1000");
+		value_waibubu.put("b1", "工资");
+		value_waibubu.put("c1", "万贸");
+		value_waibubu.put("d1", "发工资");
+		table_waibu.add(0, key_waibubu);
+		table_waibu.add(1, value_waibubu);
+		
+		json_text_.put("table", table);
+		json_text_.put("table_neibu", table_neibu);
+		json_text_.put("table_waibu", table_waibu);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请（租房）
+	public Map<String, String> purchase_zf_para (String proj_id_, String money_, String purchaseId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (purchaseId != null){
+			para.put("id_", purchaseId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("type_", "7");
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("fileTag", "");
+		para.put("plan_match_", "计划内");
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("fwjtdz", "大王庄CBD");
+		table.put("fwjnjn", "1男1女");
+		table.put("fwrzsj", "2018-10-10");
+		table.put("fwlksj", "2018-10-31");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "房东姓名");
+		key.put("b", "房屋平米数");
+		key.put("c", "租金");
+		key.put("d", "押金");
+		key.put("e", "几室几厅");
+		key.put("f", "押几付几");
+		JSONObject value = new JSONObject();
+		value.put("a", "常小黑");
+		value.put("b", "100");
+		value.put("c", "2400");
+		value.put("d", "1200");
+		value.put("e", "1室1厅");
+		value.put("f", "押1付3");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购申请：审批
+	public Map<String, String> purchase_sp_para (String purchaseId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("purchaseId", purchaseId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
+	
 }
