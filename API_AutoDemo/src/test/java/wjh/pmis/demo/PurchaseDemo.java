@@ -17,7 +17,7 @@ public class PurchaseDemo {
 	String phone_dept = "18502285517";//安质部
 	String phone_pm = "13910623294";
 	String phone_fg = "18602270056";
-	String phone_zhgl = "15122681282";
+	String phone_zhglmgr = "15122681282";
 	String phone_boss = "13502103187";
 	String phone_wzzz = "13820781432";
 	
@@ -38,7 +38,7 @@ public class PurchaseDemo {
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");//项目经理
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");//部门
 		request.purchaseSp(headermap, phone_fg, purchaseId, "1", "顺顺ZZ");//分管领导
-		request.purchaseSp(headermap, phone_zhgl, purchaseId, "1", "顺顺ZZ");//综合管理
+		request.purchaseSp(headermap, phone_zhglmgr, purchaseId, "1", "顺顺ZZ");//综合管理
 		request.purchaseSp(headermap, phone_boss, purchaseId, "1", "顺顺ZZ");//总经理
 		request.purchaseSp(headermap, phone_wzzz, purchaseId, "1", "顺顺ZZ");//物资专责
 	}
@@ -68,20 +68,20 @@ public class PurchaseDemo {
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");//项目经理
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");//部门
 		request.purchaseSp(headermap, phone_fg, purchaseId, "1", "顺顺ZZ");//分管领导
-		request.purchaseSp(headermap, phone_zhgl, purchaseId, "2", "顺顺ZZ");//综合管理
+		request.purchaseSp(headermap, phone_zhglmgr, purchaseId, "2", "顺顺ZZ");//综合管理
 		//总经理
 		this.purchaseEdit(headermap, purchaseId, proc_id_);
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");//项目经理
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");//部门
 		request.purchaseSp(headermap, phone_fg, purchaseId, "1", "顺顺ZZ");//分管领导
-		request.purchaseSp(headermap, phone_zhgl, purchaseId, "1", "顺顺ZZ");//综合管理
+		request.purchaseSp(headermap, phone_zhglmgr, purchaseId, "1", "顺顺ZZ");//综合管理
 		request.purchaseSp(headermap, phone_boss, purchaseId, "2", "顺顺ZZ");//总经理
 		//物资专责
 		this.purchaseEdit(headermap, purchaseId, proc_id_);
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");//项目经理
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");//部门
 		request.purchaseSp(headermap, phone_fg, purchaseId, "1", "顺顺ZZ");//分管领导
-		request.purchaseSp(headermap, phone_zhgl, purchaseId, "1", "顺顺ZZ");//综合管理
+		request.purchaseSp(headermap, phone_zhglmgr, purchaseId, "1", "顺顺ZZ");//综合管理
 		request.purchaseSp(headermap, phone_boss, purchaseId, "1", "顺顺ZZ");//总经理
 		request.purchaseSp(headermap, phone_wzzz, purchaseId, "2", "顺顺ZZ");//物资专责
 		//通过
@@ -89,7 +89,7 @@ public class PurchaseDemo {
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");//项目经理
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");//部门
 		request.purchaseSp(headermap, phone_fg, purchaseId, "1", "顺顺ZZ");//分管领导
-		request.purchaseSp(headermap, phone_zhgl, purchaseId, "1", "顺顺ZZ");//综合管理
+		request.purchaseSp(headermap, phone_zhglmgr, purchaseId, "1", "顺顺ZZ");//综合管理
 		request.purchaseSp(headermap, phone_boss, purchaseId, "1", "顺顺ZZ");//总经理
 		request.purchaseSp(headermap, phone_wzzz, purchaseId, "1", "顺顺ZZ");//物资专责
 	}

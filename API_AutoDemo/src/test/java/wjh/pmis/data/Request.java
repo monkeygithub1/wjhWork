@@ -83,8 +83,12 @@ public class Request {
 		RestClient restClient =  new RestClient();
 		String url_list = restClient.url("api_proj_splist");
 		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "ProjSp : 没有这条待审！");
+		}
 		String id_ = restClient.getValue(list, "data[0]/id_");
-		Assert.assertEquals(id_, projId, "CpbSp : 没有这条待审！");
+		Assert.assertEquals(id_, projId, "ProjSp : 没有这条待审！");
 		String taskId = restClient.getValue(list, "data[0]/taskId");
 		Map<String, String> para = new RequestPara().proj_sp_para(projId, taskId, sp, comment);
 		String url = restClient.url("api_proj_sp");
@@ -131,6 +135,10 @@ public class Request {
 		RestClient restClient = new RestClient();
 		String url_list = restClient.url("api_cpa_splist");
 		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "CpaSp : 没有这条待审！");
+		}
 		String id_ = restClient.getValue(list, "data[0]/id_");
 		Assert.assertEquals(id_, cpaId, "CpaSp : 没有这条待审！");
 		String taskId = restClient.getValue(list, "data[0]/taskId");
@@ -178,6 +186,10 @@ public class Request {
 		RestClient restClient = new RestClient();
 		String url_list = restClient.url("api_cpb_splist");
 		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "CpbSp : 没有这条待审！");
+		}
 		String id_ = restClient.getValue(list, "data[0]/id_");
 		Assert.assertEquals(id_, cpbId, "CpbSp : 没有这条待审！");
 		String taskId = restClient.getValue(list, "data[0]/taskId");
@@ -213,6 +225,10 @@ public class Request {
 		RestClient restClient = new RestClient();
 		String url_list = restClient.url("api_fybx_splist");
 		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "FybxSp : 没有这条待审！");
+		}
 		String id_ = restClient.getValue(list, "data[0]/id_");
 		Assert.assertEquals(id_, fybxId, "FybxSp : 没有这条待审！");
 		String taskId = restClient.getValue(list, "data[0]/taskId");
@@ -248,6 +264,10 @@ public class Request {
 		RestClient restClient = new RestClient();
 		String url_list = restClient.url("api_clbx_splist");
 		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "ClbxSp : 没有这条待审！");
+		}
 		String id_ = restClient.getValue(list, "data[0]/id_");
 		Assert.assertEquals(id_, clbxId, "ClbxSp : 没有这条待审！");
 		String taskId = restClient.getValue(list, "data[0]/taskId");
@@ -349,6 +369,10 @@ public class Request {
 		RestClient restClient = new RestClient();
 		String url_list = restClient.url("api_purchase_splist");
 		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "PurchaseSp : 没有这条待审！");
+		}
 		String id_ = restClient.getValue(list, "data[0]/id_");
 		Assert.assertEquals(id_, purchaseId, "PurchaseSp : 没有这条待审！");
 		String taskId = restClient.getValue(list, "data[0]/taskId");
@@ -356,5 +380,110 @@ public class Request {
 		String url = restClient.url("api_purchase_sp");
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "PurchaseSp : request is not ok.");	
+	}
+	//采购付款：发起
+	public void paymentApply (Map<String, String> headermap, String proj_id_, String money_, String purchase_type, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = null;
+		switch (purchase_type){
+		case "0":
+			para = new RequestPara().payment_zywz_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "1":
+			para = new RequestPara().payment_xmwz_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "2":
+			para = new RequestPara().payment_rlwb_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "3":
+			para = new RequestPara().payment_ywqt_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "4":
+			para = new RequestPara().payment_xmwzkj_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "5":
+			para = new RequestPara().payment_zhfy_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "6":
+			para = new RequestPara().payment_rlzy_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		case "7":
+			para = new RequestPara().payment_zf_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+		default:
+			System.out.println("PaymentApply: 木有这个采购类型");
+			break;
+		}
+		String url = restClient.url("api_payment_apply");
+		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "PaymentApply : request is not 操作成功！.");
+	}
+	//采购付款：编辑
+	public void paymentUpdate (Map<String, String> headermap, String proj_id_, String money_, String purchase_type, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = null;
+		switch (purchase_type){
+		case "0":
+			para = new RequestPara().payment_zywz_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+			break;
+			case "1":
+				para = new RequestPara().payment_xmwz_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+			case "2":
+				para = new RequestPara().payment_rlwb_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+			case "3":
+				para = new RequestPara().payment_ywqt_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+			case "4":
+				para = new RequestPara().payment_xmwzkj_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+			case "5":
+				para = new RequestPara().payment_zhfy_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+			case "6":
+				para = new RequestPara().payment_rlzy_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+			case "7":
+				para = new RequestPara().payment_zf_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+				break;
+		default:
+			System.out.println("PaymentApply: 木有这个采购类型");
+			break;
+		}
+		String url = restClient.url("api_payment_update");
+		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "PaymentApply : request is not 操作成功！.");
+	}
+	//采购付款：获取paymentId
+	public String getPaymentId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		String id = this.getId(headermap, "api_payment_mylist");
+		return id;
+	}
+	//采购付款：获取proc_id_
+	public String getPaymentProcId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_payment_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String id = restClient.getValue(list, "data[0]/proc_id_");
+		return id;
+	}
+	//采购付款：审批
+	public void paymentSp (Map<String, String> headermap, String phone_, String paymentId, String sp, String comment) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_payment_splist");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "PaymentSp : 没有这条待审！");
+		}
+		String id_ = restClient.getValue(list, "data[0]/id_");
+		Assert.assertEquals(id_, paymentId, "PaymentSp : 没有这条待审！");
+		String taskId = restClient.getValue(list, "data[0]/taskId");
+		Map<String, String> para = new RequestPara().payment_sp_para(paymentId, taskId, sp, comment);
+		String url = restClient.url("api_payment_sp");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "PaymentSp : request is not ok.");
 	}
 }

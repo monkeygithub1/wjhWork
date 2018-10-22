@@ -822,5 +822,351 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
-	
+	//采购付款（自用物资）
+	public Map<String, String> payment_zywz_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "物资名称");
+		key.put("b", "品牌");
+		key.put("c", "具体型号配置");
+		key.put("num", "数量");
+		key.put("e", "单位");
+		key.put("unitPrice", "采购单价/元");
+		key.put("totalPrice", "采购总价/元");
+		key.put("totalPrice", "采购总价/元");
+		key.put("realPrice", "实付金额/元");
+		key.put("gongyingshang", "推荐供应商");
+		JSONObject value = new JSONObject();
+		value.put("a", "手机");
+		value.put("b", "苹果");
+		value.put("c", "苹果XSSSSSSS");
+		value.put("num", "1");
+		value.put("e", "车");
+		value.put("unitPrice", "998");
+		value.put("totalPrice", "998");
+		value.put("realPrice", "998");
+		value.put("gongyingshang", "京东");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（项目物资）
+	public Map<String, String> payment_xmwz_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "物资名称");
+		key.put("b", "具体型号配置");
+		key.put("num", "数量");
+		key.put("d", "单位");
+		key.put("unitPrice", "采购单价/元");
+		key.put("totalPrice", "采购总价/元");
+		key.put("realPrice", "实付金额/元");
+		key.put("gongyingshang", "推荐供应商");
+		JSONObject value = new JSONObject();
+		value.put("a", "手机");
+		value.put("b", "苹果");
+		value.put("num", "1");
+		value.put("d", "车");
+		value.put("unitPrice", "998");
+		value.put("totalPrice", "998");
+		value.put("realPrice", "999");
+		value.put("gongyingshang", "二手东");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（人力外包）
+	public Map<String, String> payment_rlwb_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（业务外包/其他服务采购）
+	public Map<String, String> payment_ywqt_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（项目物资框架）
+	public Map<String, String> payment_xmwzkj_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "名称");
+		key.put("b", "品牌");
+		key.put("c", "具体型号配置");
+		key.put("num", "数量");
+		key.put("d", "单位");
+		key.put("unitPrice", "采购单价/元");
+		key.put("totalPrice", "采购总价/元");
+		key.put("realPrice", "实付金额/元");
+		key.put("gongyingshang", "推荐供应商");
+		JSONObject value = new JSONObject();
+		value.put("a", "手机");
+		value.put("b", "苹果");
+		value.put("c", "苹果XSSSSSSS");
+		value.put("num", "1");
+		value.put("d", "车");
+		value.put("unitPrice", "998");
+		value.put("totalPrice", "998");
+		value.put("realPrice", "999");
+		value.put("gongyingshang", "二手东");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（综合费用）
+	public Map<String, String> payment_zhfy_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		JSONArray goods = new JSONArray();
+		JSONObject key = new JSONObject();
+		key.put("a", "地点及费用名称");
+		key.put("b", "费用开始时间");
+		key.put("c", "费用截至时间");
+		key.put("d", "供应商");
+		key.put("e", "单位");
+		key.put("f", "开户行");
+		key.put("g", "账号");
+		key.put("totalPrice", "金额");
+		JSONObject value = new JSONObject();
+		value.put("a", "鼎泰买电脑");
+		value.put("b", "2018-10-10");
+		value.put("c", "2019-10-10");
+		value.put("d", "某宝");
+		value.put("e", "个");
+		value.put("f", "大王庄银行");
+		value.put("g", "88772288");
+		value.put("totalPrice", "1998");
+		goods.add(0, key);
+		goods.add(1, value);
+		json_text_.put("table", table);
+		json_text_.put("goods", goods);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（人力资源）
+	public Map<String, String> payment_rlzy_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		table.put("money_neibu_pay", "1000");
+		table.put("money_waibu_pay", "1500");
+		JSONArray table_neibu_pay = new JSONArray();
+		JSONObject key_neibu = new JSONObject();
+		key_neibu.put("totalPrice1", "金额/元");
+		key_neibu.put("b1", "分类");
+		key_neibu.put("c1", "供应商");
+		key_neibu.put("d1", "备注");
+		JSONObject value_neibu = new JSONObject();
+		value_neibu.put("totalPrice1", "1000");
+		value_neibu.put("b1", "工资");
+		value_neibu.put("c1", "万贸");
+		value_neibu.put("d1", "发工资");
+		table_neibu_pay.add(0, key_neibu);
+		table_neibu_pay.add(1, value_neibu);
+		JSONArray table_waibu_pay = new JSONArray();
+		JSONObject key_waibubu = new JSONObject();
+		key_waibubu.put("totalPrice1", "金额/元");
+		key_waibubu.put("b1", "分类");
+		key_waibubu.put("c1", "供应商");
+		key_waibubu.put("d1", "备注");
+		JSONObject value_waibubu = new JSONObject();
+		value_waibubu.put("totalPrice1", "1000");
+		value_waibubu.put("b1", "工资");
+		value_waibubu.put("c1", "万贸");
+		value_waibubu.put("d1", "发工资");
+		table_waibu_pay.add(0, key_waibubu);
+		table_waibu_pay.add(1, value_waibubu);
+		
+		json_text_.put("table", table);
+		json_text_.put("table_neibu_pay", table_neibu_pay);
+		json_text_.put("table_waibu_pay", table_waibu_pay);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款（租房）
+	public Map<String, String> payment_zf_para (String proj_id_, String money_, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_){
+		Map<String, String> para = new HashMap<String, String>();
+		if (paymentId != null){
+			para.put("id_", paymentId);
+			para.put("proc_id_", proc_id_);
+		}
+		para.put("pur_id_", purchaseId);
+		para.put("proj_id_", proj_id_);
+		para.put("money_", money_);
+		para.put("cpa_id_", cpaId);
+		para.put("cpb_id_", cpbId);
+		para.put("khh_name_", "渤海银行");
+		para.put("khh_account_", "62110000022233");
+		para.put("company_name_", "天津市淘客科技有限公司");
+		para.put("supplier_", "京东");
+		para.put("is_ds_pur_", is_ds_pur_);
+		para.put("simple_tip_", "木有简述");
+		//以下为json_text
+		JSONObject json_text_ = new JSONObject();
+		JSONObject table = new JSONObject();
+		table.put("payReason", "顺顺活得不如咸鱼！！");
+		json_text_.put("table", table);
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//采购付款：审批
+	public Map<String, String> payment_sp_para (String paymentId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("paymentId", paymentId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		para.put("money", "");
+		para.put("jsonStr", "");
+		return para;
+	}
 }
