@@ -5,8 +5,9 @@
     <packages>
     	<!-- <package name="wjh.pmis.testcase.proj"/>
     	<package name="wjh.pmis.testcase.purchase"/>
-    	<package name="wjh.pmis.testcase.payment"/> -->
-    	<package name="wjh.pmis.testcase.loan"/>
+    	<package name="wjh.pmis.testcase.payment"/>
+    	<package name="wjh.pmis.testcase.loan"/> -->
+    	<package name="wjh.pmis.testcase.finIo"/>
     </packages>
     
    <!--  <classes>   

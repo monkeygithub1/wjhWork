@@ -518,7 +518,7 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
 		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
 	}
-	//借款：发起（标书费）
+	//借款：编辑（标书费）
 	public void loan_bsfUpdate (Map<String, String> headermap, String money_, String type_, String proj_, String proj_id_, String loadId) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
 		Map<String, String> para_upload = new HashMap<String, String>();
@@ -576,4 +576,36 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "LoanSp : request is not ok.");
 	}
+	//开票：发起
+	public void FinIoApply (Map<String, String> headermap, String finIoId, String money_, String type_, String cpbId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().finIo_para(finIoId, money_, type_, cpbId);
+		String url = restClient.url("api_finIo_apply");
+		String responseString = restClient.post(url, para, headermap);//返回结果为ok
+		Assert.assertEquals(responseString, "ok", "FinIoApply : request is not ok！.");
+	}
+	//开票：获取finIoId
+	public String getFinIoId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		String id = this.getId(headermap, "api_finIo_mylist");
+		return id;
+	}
+	//开票：审批
+	public void finIoSp (Map<String, String> headermap, String phone_, String finIoId, String sp, String comment, String invoiceNum) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_finIo_splist");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "FinIoSp : 没有这条待审！");
+		}
+		String id_ = restClient.getValue(list, "data[0]/id_");
+		Assert.assertEquals(id_, finIoId, "FinIoSp : 没有这条待审！");
+		String taskId = restClient.getValue(list, "data[0]/taskId");
+		Map<String, String> para = new RequestPara().finIo_sp_para(finIoId, taskId, sp, comment, invoiceNum);
+		String url = restClient.url("api_finIo_sp");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "FinIoSp : request is not ok.");
+	}
+	
 }

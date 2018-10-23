@@ -1219,5 +1219,41 @@ public class RequestPara {
 		para.put("comment", comment);
 		return para;
 	}
-	
+	//开票：发起
+	public Map<String, String> finIo_para(String finIoId ,String money_, String type_, String cpbId){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("id_", finIoId);
+		para.put("money_", money_);
+		para.put("type_", type_);
+		para.put("contr_id_", cpbId);
+		para.put("time_", "2018-10-23");
+		para.put("content_", "大吃大喝");
+		para.put("tip_", "餐饮补助");
+		para.put("pa_name_", "大王庄饭馆");
+		para.put("taxpayer_id_", "7622189987211");
+		para.put("address_", "大王庄CBD");
+		para.put("tel_", "110");
+		para.put("khh_name_", "天津银行");
+		para.put("khh_account_", "22110099888");
+		para.put("company_", "天津市万贸科技有限公司");
+		JSONArray goods_json_ = new JSONArray();
+		JSONObject goods = new JSONObject();
+		goods.put("goods_model_", "阳澄湖大闸蟹");
+		goods.put("goods_count_", "2");
+		goods.put("goods_unit_price_", "100");
+		goods.put("goods_money_", 200);
+		goods_json_.add(goods);
+		para.put("goods_json_", goods_json_.toString());
+		return para;
+	}
+	//开票：审批
+	public Map<String, String> finIo_sp_para (String finIoId, String taskId, String sp, String comment, String invoiceNum){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("finIoId", finIoId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		para.put("invoiceNum", invoiceNum);
+		return para;
+	}
 }
