@@ -1169,4 +1169,55 @@ public class RequestPara {
 		para.put("jsonStr", "");
 		return para;
 	}
+	//借款（除标书费）
+	public Map<String, String> loan_para (String money_, String type_, String proj_, String proj_id_, String loadId){
+		Map<String, String> para = new HashMap<String, String>();
+		if (loadId != null){
+			para.put("id_", loadId);
+		}
+		para.put("money_", money_);
+		para.put("type_", type_);
+		para.put("proj_", proj_);
+		para.put("proj_id_", proj_id_);
+		para.put("fk_name_", "天津市万贸科技有限公司");
+		para.put("skf_name_", "常小黑");
+		para.put("khh_name_", "大王庄银行");
+		para.put("khh_account_", "987654321");
+		para.put("tip_", "长鹏ZZ");
+		return para;
+	}
+	//借款（标书费）
+	public Map<String, String> loan_bsf_para (String money_, String type_, String proj_, String proj_id_, String loadId, String fileTag){
+		Map<String, String> para = new HashMap<String, String>();
+		if (loadId != null){
+			para.put("id_", loadId);
+		}
+		para.put("money_", money_);
+		para.put("type_", type_);
+		para.put("proj_", proj_);
+		para.put("proj_id_", proj_id_);
+		para.put("fk_name_", "天津市万贸科技有限公司");
+		para.put("skf_name_", "常小黑");
+		para.put("khh_name_", "大王庄银行");
+		para.put("khh_account_", "987654321");
+		para.put("tip_", "长鹏ZZ");
+		para.put("bd", "111");
+		para.put("bh", "222");
+		para.put("fileTag", fileTag);
+		JSONObject json_text_ = new JSONObject();
+		json_text_.put("bd", "111");
+		json_text_.put("bh", "222");
+		para.put("json_text_", json_text_.toString());
+		return para;
+	}
+	//借款：审批
+	public Map<String, String> loan_sp_para (String loanId, String taskId, String sp, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("loanId", loanId);
+		para.put("taskId", taskId);
+		para.put("sp", sp);
+		para.put("comment", comment);
+		return para;
+	}
+	
 }

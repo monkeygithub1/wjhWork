@@ -212,7 +212,7 @@ public class Request {
 		Map<String, String> para = new RequestPara().fybx_update_para(projId, projCode, projName, money, bxType, bxrIds, bxrNames, pmo, typeFlag, fybxId);
 		String url = restClient.url("api_fybx_update");
 		String responseString = restClient.post(url, para, headermap);//返回结果为ok
-		Assert.assertEquals(responseString, "ok", "FybxApply : request is not ok.");
+		Assert.assertEquals(responseString, "ok", "FybxUpdate : request is not ok.");
 	}
 	//费用报销：获取fybxId
 	public String getFybxId (Map<String, String> headermap) throws ClientProtocolException, IOException{
@@ -251,7 +251,7 @@ public class Request {
 		Map<String, String> para = new RequestPara().clbx_update_para(headermap, projId, projCode, projName, money, bxrIds, bxrNames, pmo, typeFlag, clbxId);
 		String url = restClient.url("api_clbx_update");
 		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
-		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "ClbxApply : request is not 操作成功！.");
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "ClbxUpdate : request is not 操作成功！.");
 	}
 	//差旅报销：获取clbxId
 	public String getClbxId (Map<String, String> headermap) throws ClientProtocolException, IOException{
@@ -348,7 +348,7 @@ public class Request {
 		}
 		String url = restClient.url("api_purchase_update");
 		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
-		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "PurchaseApply : request is not 操作成功！.");
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "PurchaseUpdate : request is not 操作成功！.");
 	}
 	//采购申请：获取purchaseId
 	public String getPurchaseId (Map<String, String> headermap) throws ClientProtocolException, IOException{
@@ -453,7 +453,7 @@ public class Request {
 		}
 		String url = restClient.url("api_payment_update");
 		String responseString = restClient.post(url, para, headermap);//返回结果为[{"code":1,"data":"ok","msg":"操作成功！"}]
-		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "PaymentApply : request is not 操作成功！.");
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "PaymentUpdate : request is not 操作成功！.");
 	}
 	//采购付款：获取paymentId
 	public String getPaymentId (Map<String, String> headermap) throws ClientProtocolException, IOException{
@@ -485,5 +485,95 @@ public class Request {
 		String url = restClient.url("api_payment_sp");
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "PaymentSp : request is not ok.");
+	}
+	//借款：发起
+	public void loanApply (Map<String, String> headermap, String money_, String type_, String proj_, String proj_id_, String loadId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().loan_para(money_, type_, proj_, proj_id_, loadId);
+		String url = restClient.url("api_loan_apply");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
+	}
+	//借款：编辑
+	public void loanUpdate (Map<String, String> headermap, String money_, String type_, String proj_, String proj_id_, String loadId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().loan_para(money_, type_, proj_, proj_id_, loadId);
+		String url = restClient.url("api_loan_update");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanUpdate : request is not 操作成功！.");
+	}
+	//借款：发起（标书费）
+	public void loan_bsfApply (Map<String, String> headermap, String money_, String type_, String proj_, String proj_id_, String loadId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para_upload = new HashMap<String, String>();
+		para_upload.put("loanId", "");
+		Map<String,String> fileData = new HashMap<String,String>();
+		fileData.put("file", this.upload_file);
+		String url_upload = restClient.url("api_loan_upload");
+		String responseString_up = restClient.post(url_upload, para_upload, headermap, fileData);
+		String saveFilePath = restClient.getValue(responseString_up, "data/saveFilePath");
+		Assert.assertEquals(restClient.getValue(responseString_up, "code"), "1", "LoanUpload : code is not 1.");
+		Map<String, String> para = new RequestPara().loan_bsf_para(money_, type_, proj_, proj_id_, loadId, saveFilePath);
+		String url = restClient.url("api_loan_apply");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
+	}
+	//借款：发起（标书费）
+	public void loan_bsfUpdate (Map<String, String> headermap, String money_, String type_, String proj_, String proj_id_, String loadId) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para_upload = new HashMap<String, String>();
+		para_upload.put("loanId", "");
+		Map<String,String> fileData = new HashMap<String,String>();
+		fileData.put("file", this.upload_file);
+		String url_upload = restClient.url("api_loan_upload");
+		String responseString_up = restClient.post(url_upload, para_upload, headermap, fileData);
+		String saveFilePath = restClient.getValue(responseString_up, "data/saveFilePath");
+		Assert.assertEquals(restClient.getValue(responseString_up, "code"), "1", "LoanUpload : code is not 1.");
+		Map<String, String> para = new RequestPara().loan_bsf_para(money_, type_, proj_, proj_id_, loadId, saveFilePath);
+		String url = restClient.url("api_loan_update");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
+	}
+	//借款：由借款类型自动获取特殊节点
+	public String phone_loan(String type){
+		String phone_loan = "";
+		switch (type){
+		case "差旅费": case "办公费":
+			phone_loan = "15122681282";break;
+		case "采购费": case "评审费": case "项目奖":
+			phone_loan = "18502285517";break;
+		case "标书费": case "中标服务费": case "投标保证金":
+			phone_loan = "15620699121";break;
+		case "招待费": 
+			phone_loan = "18622708857";break;
+		case "实习生工资":
+			phone_loan = "18698057506";break;
+		default:
+			System.out.println("ERROR：借款类型错误");
+		}
+		return phone_loan;
+	}
+	//借款：获取loanId
+	public String getLoanId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		String id = this.getId(headermap, "api_loan_mylist");
+		return id;
+	}
+	//借款：审批
+	public void loanSp (Map<String, String> headermap, String phone_, String loanId, String sp, String comment) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_loan_splist");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "LoanSp : 没有这条待审！");
+		}
+		String id_ = restClient.getValue(list, "data[0]/id_");
+		Assert.assertEquals(id_, loanId, "LoanSp : 没有这条待审！");
+		String taskId = restClient.getValue(list, "data[0]/taskId");
+		Map<String, String> para = new RequestPara().loan_sp_para(loanId, taskId, sp, comment);
+		String url = restClient.url("api_loan_sp");
+		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
+		Assert.assertEquals(responseString, "ok", "LoanSp : request is not ok.");
 	}
 }
