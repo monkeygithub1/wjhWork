@@ -1256,4 +1256,47 @@ public class RequestPara {
 		para.put("invoiceNum", invoiceNum);
 		return para;
 	}
+	//回款认领：发布
+	public Map<String, String> mc_upsert_para (String mcId, String money_, String isHuiPiao){
+		Map<String, String> para = new HashMap<String, String>();
+		if (mcId != null){
+			para.put("id_", mcId);
+		}
+		para.put("money_", money_);
+		para.put("isHuiPiao", isHuiPiao);
+		switch (isHuiPiao){
+		case "0":
+			para.put("to_company_", "");
+			para.put("to_account_", "万贸（民生）");
+			break;
+		case "1":
+			para.put("to_company_", "天津市淘客科技有限公司");
+			para.put("to_account_", "银行承兑汇票");
+			break;
+		default:
+				System.out.println("是否银行承况汇票类型有误！");
+		}
+		para.put("source_company_", "大王庄CBD");
+		para.put("due_date_", "2018-10-24");
+		para.put("remark_", "从甲方爸爸身上薅下来的");
+		return para;
+	}
+	//回款认领：认领
+	public Map<String, String> mc_claim_para (String mcId, String type_, String ywId, String update_time_, String deptId){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("id", mcId);
+		para.put("type_", type_);
+		para.put("ywId", ywId);
+		para.put("update_time_", update_time_);
+		para.put("deptId", deptId);
+		return para;
+	}
+	//回款认领：确认
+	public Map<String, String> mc_approve_para (String mcId, String approved, String comment){
+		Map<String, String> para = new HashMap<String, String>();
+		para.put("id", mcId);
+		para.put("approved", approved);
+		para.put("comment", comment);
+		return para;
+	}
 }

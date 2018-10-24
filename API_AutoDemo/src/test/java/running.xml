@@ -4,10 +4,16 @@
   <test name="PMIS_API_AUTO">   
     <packages>
     	<!-- <package name="wjh.pmis.testcase.proj"/>
+    	<package name="wjh.pmis.testcase.cpa"/>
+    	<package name="wjh.pmis.testcase.cpb"/>
+    	<package name="wjh.pmis.testcase.fybx"/>
+    	<package name="wjh.pmis.testcase.clbx"/>
     	<package name="wjh.pmis.testcase.purchase"/>
     	<package name="wjh.pmis.testcase.payment"/>
-    	<package name="wjh.pmis.testcase.loan"/> -->
-    	<package name="wjh.pmis.testcase.finIo"/>
+    	<package name="wjh.pmis.testcase.loan"/>
+    	<package name="wjh.pmis.testcase.finIo"/> -->
+    	<package name="wjh.pmis.testcase.mc"/>
+    	
     </packages>
     
    <!--  <classes>   

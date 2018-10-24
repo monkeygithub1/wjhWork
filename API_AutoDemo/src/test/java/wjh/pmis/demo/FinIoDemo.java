@@ -63,7 +63,7 @@ public class FinIoDemo {
 		request.finIoSp(headermap, phone_sybcw, finIoId, "1", "顺顺ZZ", "123123123");
 		
 	}
-	//采购付款简易修改（什么信息都不改）
+	//开票简易修改（什么信息都不改）
 	public void finIoEdit (Map<String, String> headermap, String finIoId) throws ClientProtocolException, IOException{
 		request.login(headermap, phone_create);
 		request.FinIoApply(headermap, finIoId, money_, type_, cpbId);

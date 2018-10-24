@@ -607,5 +607,60 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "FinIoSp : request is not ok.");
 	}
+	//回款认领：发布
+	public void mcUpsert (Map<String, String> headermap, String mcId, String money_, String isHuiPiao) throws ClientProtocolException, IOException{
+		RestClient restClient =  new RestClient();
+		Map<String, String> para = new RequestPara().mc_upsert_para(mcId, money_, isHuiPiao);
+		String url = restClient.url("api_mc_upsert");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":""}
+		Assert.assertEquals(restClient.getValue(responseString, "data"), "ok", "McUpsert : request is not ok！.");
+	}
+	//获取mcId
+	public String getMcId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		String id = this.getId(headermap, "api_mc_mylist");
+		return id;
+	}
+	//获取update_time_
+	public String getUpdateTimeId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_mc_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String id = restClient.getValue(list, "data[0]/update_time_");
+		return id;
+	}
+	//回款认领：认领
+	public void mcClaim (Map<String, String> headermap, String phone_, String mcId, String type_, String ywId, String update_time_, String deptId) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_mc_claim_list");
+		String list = this.queryList(url_list, headermap);//查询认领列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "McClaim : 没有这条认领！");
+		}
+		String id_ = restClient.getValue(list, "data[0]/id_");
+		Assert.assertEquals(id_, mcId, "McClaim : 没有这条认领！");
+		Map<String, String> para = new RequestPara().mc_claim_para(mcId, type_, ywId, update_time_, deptId);
+		String url = restClient.url("api_mc_claim");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
+	}
+	//回款认领：确认
+	public void mcApprove (Map<String, String> headermap, String phone_, String mcId, String approved, String comment) throws ClientProtocolException, IOException{
+		this.login(headermap, phone_);
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_mc_approve_list");
+		String list = this.queryList(url_list, headermap);//查询待审列表
+		String count = restClient.getValue(list, "count");
+		if (count.equals("0")){
+			Assert.assertEquals(count, "not 0", "McApprove : 没有这条认领！");
+		}
+		String id_ = restClient.getValue(list, "data[0]/id_");
+		Assert.assertEquals(id_, mcId, "McApprove : 没有这条认领！");
+		Map<String, String> para = new RequestPara().mc_approve_para(mcId, approved, comment);
+		String url = restClient.url("api_mc_approve");
+		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
+		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
+	}
 	
 }
