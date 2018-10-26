@@ -16,9 +16,6 @@ import org.testng.annotations.BeforeClass;
 public class ProjFlowCheck{
 	//项目立项数据
 	String proj_name_= "费用报销成本";
-	//费用报销
-	String money_fybx = "500";
-	String bxType = "办公其他";
 	
 	
 	RequestFlow flow = new RequestFlow();
@@ -41,7 +38,7 @@ public class ProjFlowCheck{
 		proj_code = proj.get("proj_code");
 	}	
 	//费用报销
-//	@Test
+	@Test(priority=1)
 	public void flowFybx() throws ClientProtocolException, IOException{
 		flow.fybx("100", "住宿费", proj_id_, proj_code, proj_name);
 		flow.fybx("200", "宿舍杂费", proj_id_, proj_code, proj_name);
@@ -79,6 +76,7 @@ public class ProjFlowCheck{
 		flow.loan("300", "评审费", proj_name, proj_id_);
 		flow.loan("400", "办公费", proj_name, proj_id_);
 		flow.loan("500", "招待费", proj_name, proj_id_);
+		flow.loan("550", "标书费", proj_name, proj_id_);
 		flow.loan("600", "中标服务费", proj_name, proj_id_);
 		flow.loan("700", "投标保证金", proj_name, proj_id_);
 		flow.loan("800", "实习生工资", proj_name, proj_id_);

@@ -213,7 +213,12 @@ public class RequestFlow {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String loanId = "";
 		request.login(headermap, phone_create);//登录
-		request.loanApply(headermap, money_loan, type_loan, proj_name, proj_id_, loanId);
+		if (type_loan == "标书费"){
+			request.loan_bsfApply(headermap, money_loan, type_loan, proj_name, proj_id_, loanId);
+		}else{
+			request.loanApply(headermap, money_loan, type_loan, proj_name, proj_id_, loanId);
+		}
+		
 		loanId = request.getLoanId(headermap);//获取ID
 		request.loanSp(headermap, phone_dept, loanId, "1", "顺顺大猪蹄子");//部门
 		request.loanSp(headermap, phone_fg, loanId, "1", "顺顺大猪蹄子");//分管领导
