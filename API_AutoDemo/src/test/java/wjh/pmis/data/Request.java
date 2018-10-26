@@ -1,6 +1,7 @@
 package wjh.pmis.data;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
@@ -77,7 +78,7 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);
 		Assert.assertEquals(responseString, "ok", "ProjApply : request is not ok.");
 	}
-	//项目立项审批
+	//项目立项：审批
 	public void projSp (String phone_, Map<String, String> headermap, String projId, String sp, String comment) throws ClientProtocolException, IOException{
 		this.login(headermap, phone_);
 		RestClient restClient =  new RestClient();
@@ -95,6 +96,30 @@ public class Request {
 		//发起请求并获取响应
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "ProjSp : request is not ok.");	
+	}
+	//项目立项：获取proj_id_
+	public String getProjId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_proj_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String id = restClient.getValue(list, "data[0]/id_");
+		return id;
+	}
+	//项目立项：获取proj_name_
+	public String getProjName (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_proj_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String id = restClient.getValue(list, "data[0]/proj_name_");
+		return id;
+	}
+	//项目立项：获取proj_code_
+	public String getProjCode (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_proj_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String id = restClient.getValue(list, "data[0]/proj_code_");
+		return id;
 	}
 	//甲方合同：保存（返回cpaId）发起和编辑
 	public String cpaSave (Map<String, String> headermap, String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_, String purchase_code_, String purchase_id_) throws ClientProtocolException, IOException{
@@ -147,6 +172,11 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "CpaSp : request is not ok.");	
 	}
+	//甲方合同：获取cpaId
+	public String getCpaId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		String id = this.getId(headermap, "api_cpa_mylist");
+		return id;
+	}
 	//乙方合同：保存（返回cpbId）发起和编辑
 	public String cpbSave (Map<String, String> headermap, String id_, String name_, String money_, String dept_, String nature_, String type_, String proj_, String proj_id_) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
@@ -198,6 +228,11 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "CpbSp : request is not ok.");	
 	}
+	//乙方合同：获取cpbId
+	public String getCpbId (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		String id = this.getId(headermap, "api_cpb_mylist");
+		return id;
+	}
 	//费用报销：发起申请
 	public void fybxApply (Map<String, String> headermap, String projId, String projCode, String projName, String money, String bxType, String bxrIds, String bxrNames, String pmo, String typeFlag) throws ClientProtocolException, IOException{
 		RestClient restClient =  new RestClient();
@@ -213,6 +248,28 @@ public class Request {
 		String url = restClient.url("api_fybx_update");
 		String responseString = restClient.post(url, para, headermap);//返回结果为ok
 		Assert.assertEquals(responseString, "ok", "FybxUpdate : request is not ok.");
+	}
+	//费用报销：由报销类型自动获取特殊节点
+	public String phone_fybx(String type){
+		String phone_ = "";
+		switch (type){
+		case "住宿费": case "宿舍杂费": case "宿舍房租": case "市内交通费": case "油费": case "租车费": case "办公房租": case "新闻": 
+		case "图书": case "快递": case "耗材、办公用品": case "通讯费": case "办公打印": case "办公维修": case "办公其他": 
+			phone_ = "15122681282";break;//综合管理
+		case "培训相关费用": case "会议费": case "评审费": case "项目打印": case "外业补助": case "项目奖":
+			phone_ = "18502285517";break;//安质物资
+		case "标书费": case "中标服务费":
+			phone_ = "15620699121";break;//商务部
+		case "招待费": 
+			phone_ = "18622708857";break;//营销
+		case "实习生工资":
+			phone_ = "18698057506";break;//人资
+		case "加班餐费":
+			phone_ = null;break;
+		default:
+			System.out.println("ERROR：费用报销类型错误");
+		}
+		return phone_;
 	}
 	//费用报销：获取fybxId
 	public String getFybxId (Map<String, String> headermap) throws ClientProtocolException, IOException{
@@ -380,6 +437,14 @@ public class Request {
 		String url = restClient.url("api_purchase_sp");
 		String responseString = restClient.post(url, para, headermap);//返回结果为"ok"
 		Assert.assertEquals(responseString, "ok", "PurchaseSp : request is not ok.");	
+	}
+	//采购申请：获取purchaseCode
+	public String getPurchaseCode (Map<String, String> headermap) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_purchase_mylist");
+		String list = this.queryList(url_list, headermap);//查询我的申请列表
+		String id = restClient.getValue(list, "data[0]/code_");
+		return id;
 	}
 	//采购付款：发起
 	public void paymentApply (Map<String, String> headermap, String proj_id_, String money_, String purchase_type, String is_ds_pur_, String cpaId,String cpbId, String purchaseId, String paymentId, String proc_id_) throws ClientProtocolException, IOException{
@@ -662,5 +727,70 @@ public class Request {
 		String responseString = restClient.post(url, para, headermap);//返回结果为{"code":1,"data":"ok","msg":"操作成功！"}
 		Assert.assertEquals(restClient.getValue(responseString, "msg"), "操作成功！", "LoanApply : request is not 操作成功！.");
 	}
-	
+	//资金流水：获取金额、类型、模块
+	public Map<String, String> getProjFlow (Map<String, String> headermap, String projId) throws ClientProtocolException, IOException{
+		RestClient restClient = new RestClient();
+		String url_list = restClient.url("api_proj_flow");
+		Map<String,String> para = new HashMap<>();
+		para.put("projId", projId);
+		String list = restClient.post(url_list, para, headermap);
+		String kind_ = restClient.getValue(list, "data/list[0]/kind_");//费用类型
+		String money_ = restClient.getValue(list, "data/list[0]/money_");//金额
+		String source_yw_= restClient.getValue(list, "data/list[0]/source_yw_");//业务模块
+		Map<String, String> get_value = new HashMap<>();
+		get_value.put("kind_", kind_);
+		get_value.put("money_", money_);
+		get_value.put("source_yw_", source_yw_);
+		return get_value;
+	}
+	//资金流水：
+	public void checkFlow (Map<String, String> headermap, String projId, String money, String kind, String mode) throws ClientProtocolException, IOException{
+		Map<String, String> flow_value = this.getProjFlow(headermap, projId);
+		String kind_flow = flow_value.get("kind_");
+		String money_flow = flow_value.get("money_");
+		String source_yw_ = flow_value.get("source_yw_");
+		//成本时，金额为负
+		switch (mode){
+		case "费用报销": case "差旅报销": case "采购付款": case "借款":
+			money = "-" + money;
+		}
+		BigDecimal a = new BigDecimal(money_flow);
+		BigDecimal b = new BigDecimal(money);
+		int r = a.compareTo(b);
+		System.out.println("校验：\n" + "发生金额：" + money + "   VS   流水金额：" + money_flow);
+		Assert.assertEquals(r, 0, "ProjFlow : 金额有误！");//校验金额
+		System.out.println("发生模块：" + mode + "   VS   流水模块：" + source_yw_);
+		Assert.assertEquals(source_yw_, mode, "ProjFlow : 功能模块有误！");//校验功能模块
+		System.out.println("发生分类：" + kind + "   VS   流水分类：" + kind_flow);
+		//校验成本分类
+		switch (kind){
+		//差旅
+		case "住宿费": case "宿舍杂费": case "宿舍房租": case "市内交通费": case "差旅费":
+			Assert.assertEquals(kind_flow, "差旅", "ProjFlow : 成本分类有误！");break;
+		//采购
+		case "培训相关费用": case "会议费": case "评审费": case "项目打印": case "采购费":
+			Assert.assertEquals(kind_flow, "采购", "ProjFlow : 成本分类有误！");break;
+		//办公
+		case "油费": case "租车费": case "办公房租": case "新闻": case "图书": case "快递": case "耗材、办公用品": case "加班餐费":
+		case "通讯费": case "办公打印": case "办公维修": case "办公其他": case "办公费":
+			Assert.assertEquals(kind_flow, "办公", "ProjFlow : 成本分类有误！");break;
+		//营销
+		case "招待费": case "标书费": case "中标服务费": case "投标保证金":
+			Assert.assertEquals(kind_flow, "营销", "ProjFlow : 成本分类有误！");break;
+		//人员成本
+		case "实习生工资": case "外业补助":
+			Assert.assertEquals(kind_flow, "人员成本", "ProjFlow : 成本分类有误！");break;
+		//奖金
+		case "项目奖":
+			Assert.assertEquals(kind_flow, "奖金", "ProjFlow : 成本分类有误！");break;
+		  
+		 
+		
+		
+		
+		}
+		
+		
+		
+	}
 }

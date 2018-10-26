@@ -24,7 +24,7 @@ public class FybxDemo {
 	String phone_dept = "18502285517";//安质部
 	String phone_pm = "13910623294";
 	String phone_sybzjl = "13502103187";
-	String phone_bxType = "15122681282";//特殊节点
+	
 	String phone_sybcw = "15822316986";
 	String phone_boss = "13502103187";
 	String money = "500";
@@ -38,6 +38,7 @@ public class FybxDemo {
 	String proj_id_ = "0f241d5264ad44f58798ad93c645836e";
 	RestClient restClient = new RestClient();
 	Request request = new Request();
+	String phone_bxType = request.phone_fybx(bxType);//特殊节点
 	@BeforeClass
 	public void setUp() {
 	}

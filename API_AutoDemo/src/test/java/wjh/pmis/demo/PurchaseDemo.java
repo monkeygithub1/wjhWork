@@ -21,7 +21,7 @@ public class PurchaseDemo {
 	String phone_boss = "13502103187";
 	String phone_wzzz = "13820781432";
 	
-	String purchase_type = "1";
+	String purchase_type = "0";
 	String money_ = "500";
 	String proj_id_ = "0f241d5264ad44f58798ad93c645836e";
 	RestClient restClient = new RestClient();
