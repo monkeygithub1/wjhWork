@@ -6,7 +6,9 @@ import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.Test;
 
+import wjh.pmis.data.DeptAndPhone;
 import wjh.pmis.data.Request;
+import wjh.pmis.data.RequestPara;
 import wjh.pmis.restclient.RestClient;
 	/*
 	 * 是否承况汇票isHuiPiao : 0-否, 1-是
@@ -15,15 +17,18 @@ import wjh.pmis.restclient.RestClient;
 	 * 保证金回款比较麻烦，暂未处理
 	 */
 public class McDemo {
-	String phone_mc_upsert = "18920336967";//发布人 
-	String phone_mc_claim_proj = "13910623294";
-	String phone_mc_approve_proj = "15620699121";
+	DeptAndPhone dept_phone = new DeptAndPhone();
+	String dept_name = "职能部门";
+	Map<String , String> dept_para = dept_phone.getDeptInfo(dept_name);
+	String deptId = dept_para.get("deptId_mc");
+	String ywId = dept_para.get("cpbId");
+	String phone_mc_upsert = dept_phone.phone_mc_upsert;//发布人 
+	String phone_mc_claim_proj = dept_phone.phone_mc_claim_proj;
+	String phone_mc_approve_proj = dept_phone.phone_mc_approve_proj;
 	
 	String isHuiPiao = "0";
 	String money_ = "500";
 	String type_ = "proj";
-	String ywId = "9d8a6dee0e5841999eb9617d9459efd9";
-	String deptId = "c4fb1b9eba214363b23ad5a792897f61";
 	
 	RestClient restClient = new RestClient();
 	Request request = new Request();
@@ -33,7 +38,8 @@ public class McDemo {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String mcId = "";
 		request.login(headermap, phone_mc_upsert);//登录
-		request.mcUpsert(headermap, mcId, money_, isHuiPiao);//发布回款
+		Map<String, String> para = new RequestPara().mc_upsert_para(mcId, money_, isHuiPiao);
+		request.mcUpsert(headermap, para);//发布回款
 		mcId = request.getMcId(headermap);
 		String update_time_ = request.getUpdateTimeId(headermap);
 		request.mcClaim(headermap, phone_mc_claim_proj, mcId, type_, ywId, update_time_, deptId);//认领
@@ -46,7 +52,8 @@ public class McDemo {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String mcId = "";
 		request.login(headermap, phone_mc_upsert);//登录
-		request.mcUpsert(headermap, mcId, money_, isHuiPiao);//发布回款
+		Map<String, String> para = new RequestPara().mc_upsert_para(mcId, money_, isHuiPiao);
+		request.mcUpsert(headermap, para);//发布回款
 		mcId = request.getMcId(headermap);
 		String update_time_ = request.getUpdateTimeId(headermap);
 		request.mcClaim(headermap, phone_mc_claim_proj, mcId, type_, ywId, update_time_, deptId);//认领
@@ -61,6 +68,7 @@ public class McDemo {
 	//回款认领简易修改（什么信息都不改）
 	public void mcEdit (Map<String, String> headermap, String mcId) throws ClientProtocolException, IOException{
 		request.login(headermap, phone_mc_upsert);
-		request.mcUpsert(headermap, mcId, money_, isHuiPiao);
+		Map<String, String> para = new RequestPara().mc_upsert_para(mcId, money_, isHuiPiao);
+		request.mcUpsert(headermap, para);//发布回款
 	}
 }

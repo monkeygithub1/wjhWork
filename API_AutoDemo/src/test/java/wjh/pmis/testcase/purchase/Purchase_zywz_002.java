@@ -6,7 +6,9 @@ import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.Test;
 
+import wjh.pmis.data.DeptAndPhone;
 import wjh.pmis.data.Request;
+import wjh.pmis.data.RequestPara;
 import wjh.pmis.restclient.RestClient;
 	/*
 	 * 职能部门（安质部）
@@ -14,16 +16,20 @@ import wjh.pmis.restclient.RestClient;
 	 * 采购金额<10K，无需总经理审批
 	 */
 public class Purchase_zywz_002 {
-	String phone_create = "13910623294";//发起人 
-	String phone_dept = "18502285517";//安质部
-	String phone_pm = "13910623294";
-	String phone_fg = "18602270056";
-	String phone_zhglmgr = "15122681282";
-	String phone_wzzz = "13820781432";
+	DeptAndPhone dept_phone = new DeptAndPhone();
+	String dept_name = "职能部门";
+	Map<String , String> dept_para = dept_phone.getDeptInfo(dept_name);
+	String phone_create = dept_phone.phone_create;
+	String phone_dept = dept_para.get("phone_dept");
+	String phone_pm = dept_para.get("phone_pm");
+	String phone_fg = dept_para.get("phone_fg");
+	String proj_id_ = dept_para.get("proj_id_");
+	String phone_zhglmgr = dept_phone.phone_zhglmgr;
+	String phone_boss = dept_phone.phone_boss;
+	String phone_wzzz = dept_phone.phone_wzzz;
 	
 	String purchase_type = "0";
 	String money_ = "5000";
-	String proj_id_ = "0f241d5264ad44f58798ad93c645836e";
 	RestClient restClient = new RestClient();
 	Request request = new Request();
 	//一次性通过
@@ -33,7 +39,8 @@ public class Purchase_zywz_002 {
 		String purchaseId = "";
 		String proc_id_ = "";
 		request.login(headermap, phone_create);//登录
-		request.purchaseApply(headermap, proj_id_, money_, purchase_type, purchaseId, proc_id_);
+		Map<String, String> para = new RequestPara().purchase_para(proj_id_, money_, purchaseId, proc_id_, purchase_type);
+		request.purchaseApply(headermap, para);
 		purchaseId = request.getPurchaseId(headermap);//获取ID
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");//项目经理
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");//部门
@@ -48,7 +55,8 @@ public class Purchase_zywz_002 {
 		String purchaseId = "";
 		String proc_id_ = "";
 		request.login(headermap, phone_create);//登录
-		request.purchaseApply(headermap, proj_id_, money_, purchase_type, purchaseId, proc_id_);
+		Map<String, String> para = new RequestPara().purchase_para(proj_id_, money_, purchaseId, proc_id_, purchase_type);
+		request.purchaseApply(headermap, para);
 		purchaseId = request.getPurchaseId(headermap);//获取ID
 		proc_id_ = request.getPurchaseProcId(headermap);
 		//项目经理
@@ -86,6 +94,7 @@ public class Purchase_zywz_002 {
 	//采购申请简易修改（什么信息都不改）
 	public void purchaseEdit (Map<String, String> headermap, String purchaseId, String proc_id_) throws ClientProtocolException, IOException{
 		request.login(headermap, phone_create);
-		request.purchaseUpdate(headermap, proj_id_, money_, purchase_type, purchaseId, proc_id_);
+		Map<String, String> para = new RequestPara().purchase_para(proj_id_, money_, purchaseId, proc_id_, purchase_type);
+		request.purchaseUpdate(headermap, para);
 	}
 }

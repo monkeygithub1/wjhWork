@@ -2,7 +2,9 @@ package wjh.pmis.demo;
 
 import org.testng.annotations.Test;
 
+import wjh.pmis.data.DeptAndPhone;
 import wjh.pmis.data.Request;
+import wjh.pmis.data.RequestPara;
 import wjh.pmis.restclient.RestClient;
 
 import java.io.IOException;
@@ -14,18 +16,25 @@ import org.testng.annotations.BeforeClass;
 	 * 项目立项-安质部-一次性通过-非RT
 	 */
 public class ProjDemo{
-	String phone_create = "13910623294";//发起人 
-	String phone_dept = "18502285517";//安质部
-	String phone_sybzjl = "13502103187";//事业部总经理
-	String phone_az = "18502285517";//安质部负责人
-	String phone_sc = "18602270056";//生产副总
-	String proj_name_= "顺顺最帅-一次性通过";
-	String proj_name_refuse= "顺顺最帅-每个节点拒绝一次";
-	String proj_mgr_ = "武军豪";
-	String proj_mgr_id_ = "3b8f52b4b8f54bd597557361efcb8736";
-	String dept_ = "安全质量部-c4fb1b9eba214363b23ad5a792897f61";
+	DeptAndPhone dept_phone = new DeptAndPhone();
+	String dept_name = "职能部门";
+	Map<String , String> dept_para = dept_phone.getDeptInfo(dept_name);
+	String phone_dept = dept_para.get("phone_dept");
+	String phone_sybzjl = dept_para.get("phone_sybzjl");//事业部总经理
+	String dept_ = dept_para.get("dept_proj");
+	
+	String phone_PM = dept_phone.phone_PM;//发起人 
+	String proj_mgr_ = dept_phone.proj_mgr_;
+	String proj_mgr_id_ = dept_phone.proj_mgr_id_;
+	
+	String phone_az = dept_phone.phone_az;;//安质部负责人
+	String phone_sc = dept_phone.phone_sc;//生产副总
+	
+	String proj_name_= "部门调整-一次性通过";
+	String proj_name_refuse= "部门调整-每个节点拒绝一次";
 	String proj_mgr_type_ = "P";
 	String ys_kphte= "2000";
+	
 	RestClient restClient = new RestClient();
 	Request request = new Request();
 	
@@ -37,9 +46,10 @@ public class ProjDemo{
 	public void projDemo() throws ClientProtocolException, IOException {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String projId = "";
-		request.login(headermap, phone_create);//登录
-		projId = request.projSave(headermap, projId, proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);//新建项目信息
-		request.projBudge(headermap, projId, ys_kphte);//新建预算信息
+		request.login(headermap, phone_PM);//登录
+		Map<String, String> proj_para = new RequestPara().proj_save_para(projId, proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
+		projId = request.projSave(headermap, proj_para);//新建项目信息
+		request.projBudget(headermap, projId, ys_kphte);//新建预算信息
 		request.projUpload(projId, headermap);//上传附件
 		request.projApply(projId, headermap);//提交
 		request.projSp(phone_dept, headermap, projId, "1", "顺顺大猪蹄子");//部门领导审批
@@ -52,9 +62,10 @@ public class ProjDemo{
 	public void projDemoRefuse() throws ClientProtocolException, IOException{
 		Map<String, String> headermap = restClient.header();
 		String projId = "";
-		request.login(headermap, phone_create);
-		projId = request.projSave(headermap, projId, proj_name_refuse, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
-		request.projBudge(headermap, projId, ys_kphte);
+		request.login(headermap, phone_PM);
+		Map<String, String> proj_para = new RequestPara().proj_save_para(projId, proj_name_, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
+		projId = request.projSave(headermap, proj_para);//新建项目信息
+		request.projBudget(headermap, projId, ys_kphte);
 		request.projUpload(projId, headermap);
 		request.projApply(projId, headermap);
 		//部门拒绝
@@ -83,8 +94,9 @@ public class ProjDemo{
 	}
 	//简易版修改重发
 	public void projEdit(Map<String, String> headermap, String proj_name_edit, String projId) throws ClientProtocolException, IOException{
-		request.login(headermap, phone_create);
-		request.projSave(headermap, proj_name_edit, projId, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);//编辑项目信息
+		request.login(headermap, phone_PM);
+		Map<String, String> proj_para = new RequestPara().proj_save_para(projId, proj_name_refuse, proj_mgr_, proj_mgr_id_, dept_, proj_mgr_type_);
+		projId = request.projSave(headermap, proj_para);//新建项目信息
 		request.projApply(projId, headermap);//提交
 	}
 }

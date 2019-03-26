@@ -1,0 +1,7 @@
+2019-03-20 17:53:47 414 INFO:Start to select browser name from properties file
+2019-03-20 17:53:47 415 INFO:You had select test browser type is:Chrome
+2019-03-20 17:53:47 415 INFO:The test server URL is:https://pmistest.womow.cn/pmis/views/login.jsp
+2019-03-20 17:53:50 693 INFO:Lauching Chrome...
+2019-03-20 17:53:51 162 INFO:Open URL:https://pmistest.womow.cn/pmis/views/login.jsp
+2019-03-20 17:53:52 296 INFO:Maximize browser...
+2019-03-20 17:53:52 301 INFO:Wait for 5seconds.

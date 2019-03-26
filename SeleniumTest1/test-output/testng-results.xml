@@ -1,21 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23352" started-at="2018-08-18T01:47:29Z" finished-at="2018-08-18T01:47:52Z">
+  <suite name="Default suite" duration-ms="47608" started-at="2019-03-20T10:01:49Z" finished-at="2019-03-20T10:02:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23352" started-at="2018-08-18T01:47:29Z" finished-at="2018-08-18T01:47:52Z">
-      <class name="cpaTest.Win">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:cpaTest.Win@100fc185]" name="setUp" is-config="true" duration-ms="23196" started-at="2018-08-18T09:47:29Z" finished-at="2018-08-18T09:47:52Z">
+    <test name="Default test" duration-ms="47608" started-at="2019-03-20T10:01:49Z" finished-at="2019-03-20T10:02:36Z">
+      <class name="cpaTest.CpaNew_001">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:cpaTest.CpaNew_001@643b1d11]" name="setUp" is-config="true" duration-ms="17137" started-at="2019-03-20T18:01:49Z" finished-at="2019-03-20T18:02:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="applyNewCpa()[pri:0, instance:cpaTest.Win@100fc185]" name="applyNewCpa" duration-ms="142" started-at="2018-08-18T09:47:52Z" finished-at="2018-08-18T09:47:52Z">
+        <test-method status="FAIL" signature="applyNewCpa()[pri:0, instance:cpaTest.CpaNew_001@643b1d11]" name="applyNewCpa" duration-ms="30421" started-at="2019-03-20T18:02:06Z" finished-at="2019-03-20T18:02:36Z">
+          <exception class="org.openqa.selenium.NoSuchFrameException">
+            <message>
+              <![CDATA[No frame element found by name or id cpaApplyFrame
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id cpaApplyFrame
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'WUJUNHAO', ip: '192.168.91.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:973)
+	at pageObjects.PMIS_JiaFangHeTong_Page.applyNewCpa(PMIS_JiaFangHeTong_Page.java:152)
+	at cpaTest.CpaNew_001.applyNewCpa(CpaNew_001.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applyNewCpa -->
-      </class> <!-- cpaTest.Win -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:cpaTest.CpaNew_001@643b1d11]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-03-20T18:02:36Z" finished-at="2019-03-20T18:02:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- cpaTest.CpaNew_001 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

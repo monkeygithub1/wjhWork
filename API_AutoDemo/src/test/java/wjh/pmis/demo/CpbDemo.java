@@ -7,26 +7,33 @@ import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import wjh.pmis.data.DeptAndPhone;
 import wjh.pmis.data.Request;
+import wjh.pmis.data.RequestPara;
 import wjh.pmis.restclient.RestClient;
 	/*
 	 * 乙方合同-安质部-书面
 	 * 框架合同需要单独加一个参数：is_frame_=1
 	 */
 public class CpbDemo {
-	String phone_create = "13910623294";//发起人 
-	String phone_dept = "18502285517";//安质部
-	String phone_fw = "15822223160";
-	String phone_sybzjl = "13502103187";
-	String phone_boss = "13502103187";
+	DeptAndPhone dept_phone = new DeptAndPhone();
+	String dept_name = "职能部门";
+	Map<String , String> dept_para = dept_phone.getDeptInfo(dept_name);
+	String phone_create = dept_phone.phone_create;
+	String phone_dept = dept_para.get("phone_dept");
+	String phone_fg = dept_para.get("phone_fg");
+	String phone_sybzjl = dept_para.get("phone_sybzjl");
+	String phone_fw = dept_phone.phone_fw;
+	String phone_boss = dept_phone.phone_boss;
+	String proj_ = dept_para.get("proj_name");
+	String proj_id_ = dept_para.get("proj_id_");
+	String dept_ = dept_para.get("dept_cpb");
+	
 	String cpb_name_= "乙方合同-顺顺最帅-一次性通过";
 	String cpb_name_refuse= "乙方合同-顺顺最帅-每个节点拒绝一次";
 	String money_ = "10000";
-	String dept_ = "安全质量部#S#c4fb1b9eba214363b23ad5a792897f61";
 	String nature_= "书面";
 	String type_= "信息化建设";
-	String proj_ = "项目流水专用项目V3.0";
-	String proj_id_ = "0f241d5264ad44f58798ad93c645836e";
 	
 	RestClient restClient = new RestClient();
 	Request request = new Request();
@@ -39,7 +46,8 @@ public class CpbDemo {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String cpbId = "";
 		request.login(headermap, phone_create);//登录
-		cpbId = request.cpbSave(headermap, cpbId, cpb_name_, money_, dept_, nature_, type_, proj_, proj_id_);//保存合同信息
+		Map<String, String> para = new RequestPara().cpb_sava_para(cpbId, cpb_name_, money_, dept_, nature_, type_, proj_, proj_id_);
+		cpbId = request.cpbSave(headermap, para);//保存合同信息
 		request.cpb_mi_Save(headermap, money_, cpbId);//保存收款计划
 		request.cpb_io_Save(headermap, money_, cpbId);//保存开票计划
 		request.cpbApply(headermap, cpbId);//提交
@@ -54,7 +62,8 @@ public class CpbDemo {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String cpbId = "";
 		request.login(headermap, phone_create);//登录
-		cpbId = request.cpbSave(headermap, cpbId, cpb_name_, money_, dept_, nature_, type_, proj_, proj_id_);//保存合同信息
+		Map<String, String> para = new RequestPara().cpb_sava_para(cpbId, cpb_name_, money_, dept_, nature_, type_, proj_, proj_id_);
+		cpbId = request.cpbSave(headermap, para);//保存合同信息
 		request.cpb_mi_Save(headermap, money_, cpbId);//保存收款计划
 		request.cpb_io_Save(headermap, money_, cpbId);//保存开票计划
 		request.cpbApply(headermap, cpbId);//提交
@@ -85,7 +94,8 @@ public class CpbDemo {
 	//乙方方合同基本信息简易修改（仅修改合同名称）
 	public void cpbEdit(Map<String, String> headermap, String cpbId, String cpb_name_edit) throws ClientProtocolException, IOException{
 		request.login(headermap, phone_create);
-		request.cpbSave(headermap, cpbId, cpb_name_edit, money_, dept_, nature_, type_, proj_, proj_id_);
+		Map<String, String> para = new RequestPara().cpb_sava_para(cpbId, cpb_name_refuse, money_, dept_, nature_, type_, proj_, proj_id_);
+		cpbId = request.cpbSave(headermap, para);//保存合同信息
 		request.cpbApply(headermap, cpbId);
 	}
 }

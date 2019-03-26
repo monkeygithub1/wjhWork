@@ -22,7 +22,7 @@ public class PMIS_JiaFangHeTong_Page extends BasePage{
 	@FindBy (xpath=".//*[@id='win10-shortcuts']/div[contains(@onclick,\"甲方合同\")]")
 	WebElement home_cpa;
 	//我的申请
-	7
+	
 	//申请按钮
 	@FindBy (xpath=".//button[@onclick=\"toAdd()\"]")
 	WebElement cpa_toAdd;

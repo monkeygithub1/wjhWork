@@ -4,33 +4,51 @@ import java.io.IOException;
 import java.util.Map;
 
 import org.apache.http.client.ClientProtocolException;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import wjh.pmis.data.DeptAndPhone;
 import wjh.pmis.data.Request;
+import wjh.pmis.data.RequestPara;
 import wjh.pmis.restclient.RestClient;
+import wjh.pmis.testcase.purchase.Purchase_rlzy_001;
 	/*
 	 * 职能部门（安质部）
 	 * 采购类型：6-人力资源
 	 * 是否电商：固定为0
 	 */
 public class Payment_rlzy_001 {
-	String phone_create = "13910623294";//发起人 
-	String phone_pm = "13910623294";
-	String phone_hr = "18698057506";
-	String phone_cwmgr = "13820641813";
-	String phone_boss = "13502103187";
-	String phone_sybcw = "15822316986";
+	DeptAndPhone dept_phone = new DeptAndPhone();
+	String dept_name = "职能部门";
+	Map<String , String> dept_para = dept_phone.getDeptInfo(dept_name);
+	String phone_create = dept_phone.phone_create;
+	String phone_pm = dept_para.get("phone_pm");
+	String phone_dept = dept_para.get("phone_dept");
+	String phone_fg = dept_para.get("phone_fg");
+	String phone_sybcw = dept_para.get("phone_sybcw");
+	String phone_boss = dept_phone.phone_boss;
+	String phone_azmgr = dept_phone.phone_azmgr;
+	String phone_zhglmgr = dept_phone.phone_zhglmgr;
+	String phone_wzzz = dept_phone.phone_wzzz;
+	String phone_wzmgr = dept_phone.phone_wzmgr;
+	String phone_hrmgr = dept_phone.phone_hrmgr;
+	String phone_cwmgr = dept_phone.phone_cwmgr;
+	String proj_id_ = dept_para.get("proj_id_");
+	String cpaId = dept_para.get("cpaId");
+	String cpbId = dept_para.get("cpbId");
+	String purchaseId = "";
+	
 	
 	String purchase_type = "6";
 	String is_ds_pur_ = "0";
-	String money_ = "500";
-	String proj_id_ = "0f241d5264ad44f58798ad93c645836e";
-	String cpaId = "b14fecfdb4bd4079bd86c189ae885358";
-	String cpbId = "9d8a6dee0e5841999eb9617d9459efd9";
-	String purchaseId = "acab6c70f08a4ece9fc0ac243a3dda7f";
+	String money_ = "1400";
 	
 	RestClient restClient = new RestClient();
 	Request request = new Request();
+	@BeforeClass
+	public void setUp() throws InterruptedException, ClientProtocolException, IOException {
+		purchaseId = new Purchase_rlzy_001().purchase_rlzy_001();
+	}
 	//一次性通过
 	@Test
 	public void payment_rlzy_001() throws ClientProtocolException, IOException {
@@ -38,22 +56,24 @@ public class Payment_rlzy_001 {
 		String paymentId = "";
 		String proc_id_ = "";
 		request.login(headermap, phone_create);//登录
-		request.paymentApply(headermap, proj_id_, money_, purchase_type, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+		Map<String, String> para = new RequestPara().payment_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_, purchase_type);
+		request.paymentApply(headermap, para);
 		paymentId = request.getPaymentId(headermap);//获取ID
 		request.paymentSp(headermap, phone_pm, paymentId, "1", "顺顺ZZ");//项目经理
-		request.paymentSp(headermap, phone_hr, paymentId, "1", "顺顺ZZ");//人资
+		request.paymentSp(headermap, phone_hrmgr, paymentId, "1", "顺顺ZZ");//人资
 		request.paymentSp(headermap, phone_cwmgr, paymentId, "1", "顺顺ZZ");//财务资产
 		request.paymentSp(headermap, phone_boss, paymentId, "1", "顺顺ZZ");//总经理
 		request.paymentSp(headermap, phone_sybcw, paymentId, "1", "顺顺ZZ");//事业部财务
 	}
 	//每个节点拒绝一次
-	@Test(priority=1)
+//	@Test(priority=1)
 	public void payment_rlzy_001_Refuse() throws ClientProtocolException, IOException {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String paymentId = "";
 		String proc_id_ = "";
 		request.login(headermap, phone_create);//登录
-		request.paymentApply(headermap, proj_id_, money_, purchase_type, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+		Map<String, String> para = new RequestPara().payment_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_, purchase_type);
+		request.paymentApply(headermap, para);
 		paymentId = request.getPaymentId(headermap);//获取ID
 		proc_id_ = request.getPaymentProcId(headermap);
 		//项目经理拒绝
@@ -61,29 +81,29 @@ public class Payment_rlzy_001 {
 		//人资拒绝
 		this.paymentEdit(headermap, paymentId, proc_id_);
 		request.paymentSp(headermap, phone_pm, paymentId, "1", "顺顺ZZ");
-		request.paymentSp(headermap, phone_hr, paymentId, "2", "顺顺ZZ");
+		request.paymentSp(headermap, phone_hrmgr, paymentId, "2", "顺顺ZZ");
 		//财务资产拒绝
 		this.paymentEdit(headermap, paymentId, proc_id_);
 		request.paymentSp(headermap, phone_pm, paymentId, "1", "顺顺ZZ");
-		request.paymentSp(headermap, phone_hr, paymentId, "1", "顺顺ZZ");
+		request.paymentSp(headermap, phone_hrmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_cwmgr, paymentId, "2", "顺顺ZZ");
 		//总经理拒绝
 		this.paymentEdit(headermap, paymentId, proc_id_);
 		request.paymentSp(headermap, phone_pm, paymentId, "1", "顺顺ZZ");
-		request.paymentSp(headermap, phone_hr, paymentId, "1", "顺顺ZZ");
+		request.paymentSp(headermap, phone_hrmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_cwmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_boss, paymentId, "2", "顺顺ZZ");
 		//事业部财务拒绝
 		this.paymentEdit(headermap, paymentId, proc_id_);
 		request.paymentSp(headermap, phone_pm, paymentId, "1", "顺顺ZZ");
-		request.paymentSp(headermap, phone_hr, paymentId, "1", "顺顺ZZ");
+		request.paymentSp(headermap, phone_hrmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_cwmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_boss, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_sybcw, paymentId, "2", "顺顺ZZ");
 		//通过
 		this.paymentEdit(headermap, paymentId, proc_id_);
 		request.paymentSp(headermap, phone_pm, paymentId, "1", "顺顺ZZ");
-		request.paymentSp(headermap, phone_hr, paymentId, "1", "顺顺ZZ");
+		request.paymentSp(headermap, phone_hrmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_cwmgr, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_boss, paymentId, "1", "顺顺ZZ");
 		request.paymentSp(headermap, phone_sybcw, paymentId, "1", "顺顺ZZ");
@@ -91,6 +111,7 @@ public class Payment_rlzy_001 {
 	//采购付款简易修改（什么信息都不改）
 	public void paymentEdit (Map<String, String> headermap, String paymentId, String proc_id_) throws ClientProtocolException, IOException{
 		request.login(headermap, phone_create);
-		request.paymentUpdate(headermap, proj_id_, money_, purchase_type, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_);
+		Map<String, String> para = new RequestPara().payment_para(proj_id_, money_, is_ds_pur_, cpaId, cpbId, purchaseId, paymentId, proc_id_, purchase_type);
+		request.paymentUpdate(headermap, para);
 	}
 }

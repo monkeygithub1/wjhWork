@@ -1,0 +1,7 @@
+2018-10-31 13:13:33 468 INFO:Start to select browser name from properties file
+2018-10-31 13:13:33 469 INFO:You had select test browser type is:Chrome
+2018-10-31 13:13:33 469 INFO:The test server URL is:https://www.126.com/
+2018-10-31 13:13:36 138 INFO:Lauching Chrome...
+2018-10-31 13:13:36 885 INFO:Open URL:https://www.126.com/
+2018-10-31 13:13:38 014 INFO:Maximize browser...
+2018-10-31 13:13:38 018 INFO:Wait for 5seconds.

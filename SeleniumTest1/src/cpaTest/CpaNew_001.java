@@ -29,7 +29,7 @@ public class CpaNew_001 {
 	String username_wuzi = "18502285517";
 	String username_zong= "13502103187";
 	String username_fg_zhineng= "18602270056";//安质对应分管领导
-	String passwd = "qetqet";
+	String passwd = "12331";
 	String cpa_name = "常庆顺活得不如一条咸鱼";
 	String cpa_money = "998";
 	String cpa_dept = "安全质量部";
@@ -59,8 +59,9 @@ public class CpaNew_001 {
 		Thread.sleep(1000);
 		//发起
 		pmis.login(username, passwd);
+		//登录成功后需要先关闭两个弹出框，目前脚本只关闭了第一个框，第二个框可使用同样方法关闭
 		Thread.sleep(1000);
-//		pmis_cpa.applyNewCpa(cpa_name, cpa_money, cpa_dept, cpa_time, cpa_xingzhi, cpa_type, cpa_jia, cpa_yi, proj_name, cpa_descript, cpa_moneyOut_bili, cpa_moneyOut_date1, cpa_moneyOut_tiaojian, cpa_invoiceIn_bili, cpa_invoiceIn_date1);
+		pmis_cpa.applyNewCpa(cpa_name, cpa_money, cpa_dept, cpa_time, cpa_xingzhi, cpa_type, cpa_jia, cpa_yi, proj_name, cpa_descript, cpa_moneyOut_bili, cpa_moneyOut_date1, cpa_moneyOut_tiaojian, cpa_invoiceIn_bili, cpa_invoiceIn_date1);
 		//部门审批
 		pmis.loginSwitch(username_dept, passwd);
 		pmis_cpa.cpaSpAgree("OK");

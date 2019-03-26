@@ -1,5 +1,7 @@
 .metadata
 .recommenders
+.log
+.classpath
 test-output/
 target/
 bin/

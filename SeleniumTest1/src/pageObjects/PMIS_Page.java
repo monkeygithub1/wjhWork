@@ -36,6 +36,7 @@ public class PMIS_Page extends BasePage{
 	 * 构造方法
 	 */
 	//登录并关闭欢迎页
+	//关闭欢迎页后还需要再关闭“我知道了”框
 	public void login(String username, String passwd) throws InterruptedException{
 //		login_username.sendKeys(username);
 //		login_password.sendKeys(passwd);

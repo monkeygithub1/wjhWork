@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">   
+<suite name="Default Suite">   
+  <test name="PMIS_API_AUTO">   
+    <packages>
+    	<package name="wjh.pmis.testcase.purchase"/>
+    	
+    </packages>
+    
+   <!--  <classes>   
+      <class name="wjh.pmis.testcase.purchase.Purchase_zywz_001"/>
+    </classes>  -->
+    
+  </test> <!-- Java_Learn -->   
+</suite> <!-- Default Suite -->  

@@ -12,10 +12,13 @@ import org.testng.annotations.BeforeClass;
 	/*
 	 * 项目流水-整体流程
 	 * 职能部门（安质部）
+	 * 校验：
+	 * 资金流水——成本
+	 * 预算管控
 	 */
 public class ProjFlowCheck{
 	//项目立项数据
-	String proj_name_= "费用报销成本";
+	String proj_name_= "财务流水导出-借款";
 	
 	
 	RequestFlow flow = new RequestFlow();
@@ -38,7 +41,7 @@ public class ProjFlowCheck{
 		proj_code = proj.get("proj_code");
 	}	
 	//费用报销
-	@Test(priority=1)
+//	@Test(priority=1)
 	public void flowFybx() throws ClientProtocolException, IOException{
 		flow.fybx("100", "住宿费", proj_id_, proj_code, proj_name);
 		flow.fybx("200", "宿舍杂费", proj_id_, proj_code, proj_name);
@@ -66,9 +69,18 @@ public class ProjFlowCheck{
 		flow.fybx("2400", "实习生工资", proj_id_, proj_code, proj_name);
 		flow.fybx("2500", "外业补助", proj_id_, proj_code, proj_name);
 		flow.fybx("2600", "项目奖", proj_id_, proj_code, proj_name);
+		flow.fybx("260", "其他", proj_id_, proj_code, proj_name);
 	}
+	
+	//差旅报销
+//	@Test(priority=1)
+	public void flowClbx() throws ClientProtocolException, IOException {
+		flow.clbx(250, proj_id_, proj_code, proj_name);
+	}
+	
+	
 		
-	//借款（不包括标书费）
+	//借款
 	@Test(priority=2)
 	public void flowLoan() throws ClientProtocolException, IOException{
 		flow.loan("100", "差旅费", proj_name, proj_id_);
@@ -80,7 +92,6 @@ public class ProjFlowCheck{
 		flow.loan("600", "中标服务费", proj_name, proj_id_);
 		flow.loan("700", "投标保证金", proj_name, proj_id_);
 		flow.loan("800", "实习生工资", proj_name, proj_id_);
-		flow.loan("900", "项目奖", proj_name, proj_id_);
 	}
 	
 	

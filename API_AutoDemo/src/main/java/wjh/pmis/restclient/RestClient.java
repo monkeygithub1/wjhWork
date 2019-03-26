@@ -32,6 +32,78 @@ import wjh.pmis.util.TestUtil;
 
 public class RestClient {
 	String ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+	//迷信
+	public void mi_xin () throws InterruptedException{
+		System.out.println("    -------------------------------------");
+		System.out.println("    | 佛       祖       保       佑       网       络       不       卡  |");
+		System.out.println("    -------------------------------------");
+		Thread.sleep(1000);
+		System.out.println("                   _oo0oo_");
+		System.out.println("                  o8888888o");
+		System.out.println("                  88\" . \"88");
+		System.out.println("                  (| -_- |)");
+		System.out.println("                  0\\  =  /0");
+		System.out.println("               ____/'---'\\____");
+		System.out.println("             .'  \\\\|     |//  '.");
+		System.out.println("            /  \\\\|||  :  |||//- \\");
+		System.out.println("           /  _||||| -:- |||||-  \\");
+		System.out.println("           |   | \\\\\\  -  /// |   |");
+		System.out.println("           | \\_|  ''\\---/''  |   |");
+		System.out.println("           \\  .-\\__  '-'  ___/-. /");
+		System.out.println("         ___'. .'  /--.--\\  '. . __");
+		System.out.println("      .\"\" '<  '.___\\_<|>_/___.'  >'\"\".");
+		System.out.println("     | | :  '- \\'.;'\\ _ /';.'/ - ' : | |");
+		System.out.println("     \\  \\ '-.   \\_ __\\ /__ _/   .-' /  /");
+		System.out.println("======'-.____'-.___\\_____/___.-'____.-'======");
+		System.out.println("                   '=---='");
+		Thread.sleep(1000);
+		System.out.println("                  -------------------------------------");
+		System.out.println("                  |     转      发      这      个      皮      卡      丘           |");
+		System.out.println("                  |   永      远      告      别      连      接      超      时     |");
+		System.out.println("                  -------------------------------------");
+		Thread.sleep(1000);
+		System.out.println("                                                                     ####");
+		System.out.println("                                                                 ########");
+		System.out.println("                                                             ############");
+		System.out.println("                                                           ##      ######");
+		System.out.println("     ############                                        ##        ####");
+		System.out.println("     ######******########                              ##      ****####");
+		System.out.println("         ####**        **########  ##############  ####        ****##");
+		System.out.println("           ####**              **##              ##**        ****##");
+		System.out.println("             ####**                                      ******##");
+		System.out.println("               ####**********                          **##**##");
+		System.out.println("                   ####**##                              **##");
+		System.out.println("                       ##**                                ##");
+		System.out.println("                       ##      ####                ####    ##");
+		System.out.println("                     ##      ####  ##            ####  ##    ##");
+		System.out.println("                     ##      ########            ########    ##");
+		System.out.println("                     ##        ####                ####      ##");
+		System.out.println("     ##            ##    ****            ####            ****  ##");
+		System.out.println("     ####          ##  ********                        ********##");
+		System.out.println("     ##**##        ##  ********    ##    ####    ##    ********##");
+		System.out.println("     ##  **##      ##    ****        ####    ####        ****  ##");
+		System.out.println("     ##    **##      ##                                      ##");
+		System.out.println("     ##      **##    ##**                                  **##");
+		System.out.println("     ##        **##    ##                                  ##");
+		System.out.println("     ##          **####**              ********            **##");
+		System.out.println("     ##            **####                ****                ##");
+		System.out.println("     ##              ##            ##            ##          ##");
+		System.out.println("       ##        ####      ##      ##            ##      ##  ##");
+		System.out.println("         ##    ##  ##      ##        ##        ##        ##    ##");
+		System.out.println("       ##    ##    ##      **##      ##        ##      ##**    ##");
+		System.out.println("       ##    **##  ##      **##      ##        ##      ##**    ##");
+		System.out.println("         ##  ****####        **##    ##        ##    ##**      ##");
+		System.out.println("           ##******##          **####            ####**        ##");
+		System.out.println("             ##**####                                          ##");
+		System.out.println("           ##******##**                                        ##");
+		System.out.println("             ##******##**                                    ##");
+		System.out.println("               ####**##**                                    ##");
+		System.out.println("                   ######**            ********            ##");
+		System.out.println("                         ##    ****##############****    ##");
+		System.out.println("                       ##      ######            ####      ##");
+		System.out.println("                       ##########                  ##########");
+		Thread.sleep(1000);
+	}
 	//取响应文本的特定值
 	public String getValue(String text, String key){
 		JSONObject listJson = JSON.parseObject(text);
@@ -50,6 +122,18 @@ public class RestClient {
 		headermap.put("Cookie", cookie);
 		return headermap;
 	}
+	//带cookie的信息头（产品化）
+	public Map<String,String> header_product() throws ClientProtocolException, IOException {
+		//由登录页获取cookie（在响应的headers数组中获取）
+		String login = this.url_product("login");
+		CloseableHttpResponse closeableHttpResponse = this.get(login);
+		String cookie = closeableHttpResponse.getAllHeaders()[5].getValue();
+		//将cookie写到信息头集合
+		HashMap<String, String> headermap = new HashMap<String, String>();
+		headermap.put("Content-Type", this.ContentType);
+		headermap.put("Cookie", cookie);
+		return headermap;
+	}
 	//1、GET请求方法
 	public CloseableHttpResponse get(String url) throws ClientProtocolException, IOException{
 		//创建一个可关闭的HttpClient对象
@@ -62,7 +146,7 @@ public class RestClient {
 				
 	}
 	//2、GET请求方法（带请求头信息）
-	public CloseableHttpResponse get(String url, HashMap<String, String> headermap) throws ClientProtocolException, IOException{
+	public String get(String url, Map<String, String> headermap) throws ClientProtocolException, IOException{
 		//
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		
@@ -73,7 +157,8 @@ public class RestClient {
 		}
 		
 		CloseableHttpResponse httpResponse = httpclient.execute(httpget);
-		return httpResponse;
+		String responseString = EntityUtils.toString(httpResponse.getEntity());
+		return responseString;
 	}
 	//3、POST请求方法
 	public String post(String url, Map<String, String> entity, Map<String, String> headermap) throws ClientProtocolException, IOException  {
@@ -163,10 +248,28 @@ public class RestClient {
 		}
 		return requestParaString;
 	}
-	//拼接口URL
+	//拼接口URL（测试服）
 	public String url(String api){
 		TestBase testBase = new TestBase();
 		String url = testBase.prop.getProperty("HOST")+ testBase.prop.getProperty(api);
+		return url;
+	}
+	////获取配置参数信息（测试服）
+	public String info(String info){
+		TestBase testBase = new TestBase();
+		String para = testBase.prop.getProperty(info);
+		return para;
+	}
+	//拼接口URL（产品化）
+	public String url_product(String api){
+		TestBase testBase = new TestBase();
+		String url = testBase.prop_product.getProperty("HOST")+ testBase.prop_product.getProperty(api);
+		return url;
+	}
+	//获取配置参数信息（产品化）
+	public String info_product(String info){
+		TestBase testBase = new TestBase();
+		String url = testBase.prop_product.getProperty(info);
 		return url;
 	}
 }

@@ -6,7 +6,9 @@ import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.Test;
 
+import wjh.pmis.data.DeptAndPhone;
 import wjh.pmis.data.Request;
+import wjh.pmis.data.RequestPara;
 import wjh.pmis.restclient.RestClient;
 	/*
 	 * 职能部门（安质部）
@@ -14,27 +16,34 @@ import wjh.pmis.restclient.RestClient;
 	 * 采购金额>10K，总经理审批
 	 */
 public class Purchase_zhfy_001 {
-	String phone_create = "13910623294";//发起人 
-	String phone_dept = "18502285517";//安质部
-	String phone_pm = "13910623294";
-	String phone_fg = "18602270056";
-	String phone_zhglzz = "15102218523";
-	String phone_zhglmgr = "15122681282";
-	String phone_boss = "13502103187";
+	DeptAndPhone dept_phone = new DeptAndPhone();
+	String dept_name = "职能部门";
+	Map<String , String> dept_para = dept_phone.getDeptInfo(dept_name);
+	String phone_create = dept_phone.phone_create;
+	String phone_dept = dept_para.get("phone_dept");
+	String phone_pm = dept_para.get("phone_pm");
+	String phone_fg = dept_para.get("phone_fg");
+	String proj_id_ = dept_para.get("proj_id_");
+	String phone_zhglmgr = dept_phone.phone_zhglmgr;
+	String phone_boss = dept_phone.phone_boss;
+	String phone_zhglzz = dept_phone.phone_zhglzz;
 	
 	String purchase_type = "5";
 	String money_ = "10000";
-	String proj_id_ = "0f241d5264ad44f58798ad93c645836e";
 	RestClient restClient = new RestClient();
 	Request request = new Request();
 	//一次性通过
 	@Test
-	public void purchase_zhfy_001() throws ClientProtocolException, IOException {
+	public void purchase_zhfy_001_() throws ClientProtocolException, IOException{
+		this.purchase_zhfy_001();
+	}
+	public String purchase_zhfy_001() throws ClientProtocolException, IOException {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String purchaseId = "";
 		String proc_id_ = "";
 		request.login(headermap, phone_create);//登录
-		request.purchaseApply(headermap, proj_id_, money_, purchase_type, purchaseId, proc_id_);
+		Map<String, String> para = new RequestPara().purchase_para(proj_id_, money_, purchaseId, proc_id_, purchase_type);
+		request.purchaseApply(headermap, para);
 		purchaseId = request.getPurchaseId(headermap);//获取ID
 		request.purchaseSp(headermap, phone_pm, purchaseId, "1", "顺顺ZZ");
 		request.purchaseSp(headermap, phone_dept, purchaseId, "1", "顺顺ZZ");
@@ -42,15 +51,17 @@ public class Purchase_zhfy_001 {
 		request.purchaseSp(headermap, phone_zhglzz, purchaseId, "1", "顺顺ZZ");
 		request.purchaseSp(headermap, phone_zhglmgr, purchaseId, "1", "顺顺ZZ");
 		request.purchaseSp(headermap, phone_boss, purchaseId, "1", "顺顺ZZ");
+		return purchaseId;
 	}
 	//每个节点拒绝一次
-	@Test (priority=1)
+//	@Test (priority=1)
 	public void purchase_zhfy_001_Refuse() throws ClientProtocolException, IOException {
 		Map<String, String> headermap = restClient.header();//获取信息头（带cookie）
 		String purchaseId = "";
 		String proc_id_ = "";
 		request.login(headermap, phone_create);//登录
-		request.purchaseApply(headermap, proj_id_, money_, purchase_type, purchaseId, proc_id_);
+		Map<String, String> para = new RequestPara().purchase_para(proj_id_, money_, purchaseId, proc_id_, purchase_type);
+		request.purchaseApply(headermap, para);
 		purchaseId = request.getPurchaseId(headermap);//获取ID
 		proc_id_ = request.getPurchaseProcId(headermap);
 		//项目经理
@@ -97,6 +108,7 @@ public class Purchase_zhfy_001 {
 	//采购申请简易修改（什么信息都不改）
 	public void purchaseEdit (Map<String, String> headermap, String purchaseId, String proc_id_) throws ClientProtocolException, IOException{
 		request.login(headermap, phone_create);
-		request.purchaseUpdate(headermap, proj_id_, money_, purchase_type, purchaseId, proc_id_);
+		Map<String, String> para = new RequestPara().purchase_para(proj_id_, money_, purchaseId, proc_id_, purchase_type);
+		request.purchaseUpdate(headermap, para);
 	}
 }
